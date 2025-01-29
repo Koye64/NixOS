@@ -11,6 +11,14 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
+      sansSerif = {
+        package = pkgs.nerd-fonts.noto;
+	name = "Noto Sans Nerd Font";
+      };
+      serif = {
+        package = pkgs.nerd-fonts.noto;
+	name = "Noto Serif Nerd Font";
+      };
     };
 
     targets = {

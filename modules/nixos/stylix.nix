@@ -12,5 +12,9 @@
         name = "JetBrainsMono Nerd Font";
       };
     };
+
+    targets = {
+      grub.enable = false;
+    };
   };
 }

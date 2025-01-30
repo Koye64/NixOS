@@ -8,6 +8,7 @@
     targets = {
       bat.enable = false;
       kitty.enable = false;
+      swaylock.enable = false;
     };
   };
 }

@@ -4,7 +4,7 @@
   imports = [
     ./console
     ./catppuccin.nix
-    ./discord.nix
+    ./communication.nix
     ./firefox.nix
     ./stylix.nix
     ./sway.nix

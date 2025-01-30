@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  programs.rofi = {
+    enable = true;
+  };
+  
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -13,7 +17,7 @@
     in {
       terminal = "${pkgs.kitty}/bin/kitty";
       modifier = "Mod4";
-      menu = "${pkgs.fuzzel}/bin/fuzzel";
+      menu = "${lib.getExe pkgs.rofi} -show drun";
       bars = [];
       window = {
         border = 2;

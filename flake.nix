@@ -9,9 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, catppuccin, home-manager, nixpkgs, stylix, ... }@inputs:
+  outputs = { self, catppuccin, home-manager, nixpkgs, nur, stylix, ... }@inputs:
   let
     inputs.user = "koye";
     inputs.wallpaper = ./assets/img/wall.png;
@@ -20,6 +24,7 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      overlays = [ nur.overlays.default ];
     };
   in
   {

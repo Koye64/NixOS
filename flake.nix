@@ -24,28 +24,28 @@
   in
   {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
+      "desktop" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
         
 	modules = [
+	  { nixpkgs.pkgs = pkgs; }
 	  ./hosts/default/configuration.nix
+	  ./modules/nixos
 	  catppuccin.nixosModules.catppuccin
 	  stylix.nixosModules.stylix
-	  ./modules/nixos
-	  home-manager.nixosModules.home-manager
-	  {
-	    nixpkgs.pkgs = pkgs;
-	    home-manager = {
-	      extraSpecialArgs = { inherit inputs system; };
-	      useGlobalPkgs = true;
-	      useUserPackages = true;
-	      users.${inputs.user}.imports = [ 
-	         ./hosts/default/home.nix
-		 catppuccin.homeManagerModules.catppuccin
-		 ./modules/home-manager
-	      ];
-	    };
-	  }
+	];
+      };
+    };
+    homeConfigurations = {
+      "koye@desktop" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs system; };
+
+        modules = [
+          ./hosts/default/home.nix
+          ./modules/home-manager
+          catppuccin.homeManagerModules.catppuccin
+	  stylix.homeManagerModules.stylix
 	];
       };
     };

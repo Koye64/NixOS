@@ -33,6 +33,18 @@
       startup = [
         { command = "${lib.getExe pkgs.autotiling}"; }
       ];
+      input = {
+        "*" = {
+	  accel_profile = "flat";
+	  dwt = "enabled";
+	  tap = "enabled";
+	};
+	"1739:52759:SYNA32EA:00_06CB:CE17_Touchpad" = {
+	  natural_scroll = "enabled";
+	  accel_profile = "adaptive";
+	  middle_emulation = "enabled";
+	};
+      };
       output = {
         "*" = {
 	  scale = "1";
@@ -129,6 +141,10 @@
 	      "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
        "${cfg.modifier}+q" = "mode resize";
+
+       "${cfg.modifier}+Shift+s" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp} -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy'';
+       "Print" = ''exec ${lib.getExe pkgs.grim} -o "$(${pkgs.sway}/bin/swaymsg -t get_outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy" - | ${pkgs.wl-clipboard}/bin/wl-copy'';
+       "Shift+Print" = ''exec ${lib.getExe pkgs.grim} - | ${pkgs.wl-clipboard}/bin/wl-copy'';
       };
     };
   };

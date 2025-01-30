@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.waybar = {
@@ -26,6 +26,13 @@
 	smartBorders = "on";
 	smartGaps = true;
       };
+      colors = {
+        focusedInactive.indicator = lib.mkForce cfg.colors.focusedInactive.border;
+        unfocused.indicator = lib.mkForce cfg.colors.unfocused.border;
+      };
+      startup = [
+        { command = "${lib.getExe pkgs.autotiling}"; }
+      ];
       output = {
         "*" = {
 	  scale = "1";

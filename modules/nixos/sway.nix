@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtwayland
-    kdePackages.qtwayland
   ];
 
   programs.sway = {

@@ -5,6 +5,10 @@
     libsForQt5.qt5.qtwayland
   ];
 
+  services.udisks2 = {
+    enable = true;
+  };
+
   programs.sway = {
     enable = true;
     extraPackages = [ ];

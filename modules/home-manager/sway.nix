@@ -34,7 +34,7 @@
 	  max_render_time = "off";
 	};
 	"Virtual-1" = {
-	  mode = "1920x1080@60Hz";
+	  mode = "1440x900@60Hz";
 	};
 	"DP-1" = {
 	  mode = "1920x1080@144Hz";

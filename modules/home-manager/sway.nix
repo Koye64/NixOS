@@ -45,6 +45,10 @@
         hideEdgeBorders = "smart";
 	titlebar = false;
       };
+      floating = {
+        border = 2;
+        titlebar = false;
+      };
       gaps = {
         inner = 4;
 	outer = 4;

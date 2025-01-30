@@ -4,16 +4,9 @@
   home.username = "koye";
   home.homeDirectory = "/home/koye";
 
+  nixpkgs.config.allowUnfree = true;
+
   home.stateVersion = "24.11";
-
-  home.packages = with pkgs; [
-  ];
-
-  home.file = {
-  };
-
-  home.sessionVariables = {
-  };
 
   programs.home-manager.enable = true;
 }

@@ -23,7 +23,6 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config.allowUnfree = true;
       overlays = [ nur.overlays.default ];
     };
   in
@@ -33,9 +32,9 @@
         specialArgs = { inherit inputs system; };
         
 	modules = [
-	  { nixpkgs.pkgs = pkgs; }
 	  ./hosts/default/configuration.nix
 	  ./modules/nixos
+	  nur.modules.nixos.default
 	  catppuccin.nixosModules.catppuccin
 	  stylix.nixosModules.stylix
 	];

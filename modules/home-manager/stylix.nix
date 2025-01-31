@@ -7,6 +7,7 @@
     image = inputs.wallpaper;
     targets = {
       bat.enable = false;
+      btop.enable = false;
       kitty.enable = false;
       swaylock.enable = false;
     };

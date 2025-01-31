@@ -180,6 +180,8 @@
        "${cfg.modifier}+Shift+s" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp} -d)" - | ${pkgs.wl-clipboard}/bin/wl-copy'';
        "Print" = ''exec ${lib.getExe pkgs.grim} -o "$(${pkgs.sway}/bin/swaymsg -t get_outputs | ${lib.getExe pkgs.jq} -r '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy" - | ${pkgs.wl-clipboard}/bin/wl-copy'';
        "Shift+Print" = ''exec ${lib.getExe pkgs.grim} - | ${pkgs.wl-clipboard}/bin/wl-copy'';
+       "--whole-window --border ${cfg.modifier}+button5" = "workspace next_on_output";
+       "--whole-window --border ${cfg.modifier}+button4" = "workspace prev_on_output";
       };
     };
     extraConfig = ''

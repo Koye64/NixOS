@@ -81,18 +81,18 @@
         { command = "systemctl restart --user waybar"; always = true; }
       ];
       input = {
-        "*" = {
+        "type:pointer" = {
 	  accel_profile = "flat";
-	  dwt = "enabled";
-	  tap = "enabled";
 	};
 	"type:keyboard" = {
 	  xkb_numlock = "enabled";
 	};
-	"1739:52759:SYNA32EA:00_06CB:CE17_Touchpad" = {
-	  natural_scroll = "enabled";
+	"type:touchpad" = {
 	  accel_profile = "adaptive";
+	  dwt = "enabled";
 	  middle_emulation = "enabled";
+	  natural_scroll = "enabled";
+	  tap = "enabled";
 	};
       };
       output = {

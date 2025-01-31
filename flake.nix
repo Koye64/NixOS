@@ -18,7 +18,7 @@
   outputs = { self, catppuccin, home-manager, nixpkgs, nur, stylix, ... }@inputs:
   let
     inputs.user = "koye";
-    inputs.wallpaper = ./assets/img/wall.png;
+    inputs.wallpaper = ./assets/img/nix-wallpaper-nineish-catppuccin-mocha-alt.png;
 
     system = "x86_64-linux";
     pkgs = import nixpkgs {

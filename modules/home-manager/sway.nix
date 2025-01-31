@@ -40,6 +40,7 @@
       modifier = "Mod4";
       menu = "${lib.getExe pkgs.rofi} -show drun";
       bars = [];
+      defaultWorkspace = "workspace number 1";
       window = {
         border = 2;
         hideEdgeBorders = "smart";
@@ -61,6 +62,7 @@
       };
       startup = [
         { command = "${lib.getExe pkgs.autotiling}"; }
+        { command = "systemctl restart --user waybar"; always = true; }
       ];
       input = {
         "*" = {
@@ -93,6 +95,10 @@
 	  position = "0,180";
 	};
       };
+      workspaceOutputAssign = [
+        { workspace = "1"; output = "DP-1"; }
+        { workspace = "9"; output = "HDMI-A-1"; }
+      ];
       keybindings = {
        "${cfg.modifier}+Return" = "exec ${cfg.terminal}";
        "${cfg.modifier}+c" = "kill";
@@ -176,5 +182,9 @@
        "Shift+Print" = ''exec ${lib.getExe pkgs.grim} - | ${pkgs.wl-clipboard}/bin/wl-copy'';
       };
     };
+    extraConfig = ''
+      bindgesture swipe:left workspace next_on_output
+      bindgesture swipe:right workspace prev_on_output
+    '';
   };
 }

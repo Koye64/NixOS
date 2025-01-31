@@ -45,10 +45,26 @@
         border = 2;
         hideEdgeBorders = "smart";
 	titlebar = false;
+	commands = [
+	  {
+	    command = "sticky true";
+	    criteria = { title = "Picture-in-Picture"; };
+	  }
+	  {
+	    command = "allow_tearing yes";
+	    criteria = { app_id = "^(?!firefox).*$"; };
+	  }
+	];
       };
       floating = {
         border = 2;
         titlebar = false;
+	criteria = [
+	  { title = "Steam - Update News"; }
+	  { class = "Pavucontrol"; }
+	  { title = "Calculator"; }
+	  { title = "Picture-in-Picture"; }
+	];
       };
       gaps = {
         inner = 4;
@@ -69,6 +85,9 @@
 	  accel_profile = "flat";
 	  dwt = "enabled";
 	  tap = "enabled";
+	};
+	"type:keyboard" = {
+	  xkb_numlock = "enabled";
 	};
 	"1739:52759:SYNA32EA:00_06CB:CE17_Touchpad" = {
 	  natural_scroll = "enabled";

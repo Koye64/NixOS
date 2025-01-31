@@ -7,6 +7,7 @@
     ./git.nix
     ./nh.nix
     ./nvim.nix
+    ./ssh.nix
     ./zsh.nix
   ];
 }

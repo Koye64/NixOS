@@ -14,4 +14,8 @@
   gtk = {
     enable = true;
   };
+
+  dconf = {
+    enable = true;
+  };
 }

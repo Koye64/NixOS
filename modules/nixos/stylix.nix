@@ -23,6 +23,7 @@
 
     targets = {
       grub.enable = false;
+      plymouth.enable = false;
     };
   };
 }

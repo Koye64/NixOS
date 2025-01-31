@@ -30,9 +30,20 @@
     nixosConfigurations = {
       "desktop" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system; };
-        
+
 	modules = [
 	  ./hosts/default/configuration.nix
+	  ./modules/nixos
+	  nur.modules.nixos.default
+	  catppuccin.nixosModules.catppuccin
+	  stylix.nixosModules.stylix
+	];
+      };
+      "laptop" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system; };
+        
+	modules = [
+	  ./hosts/laptop/configuration.nix
 	  ./modules/nixos
 	  nur.modules.nixos.default
 	  catppuccin.nixosModules.catppuccin
@@ -47,6 +58,17 @@
 
         modules = [
           ./hosts/default/home.nix
+          ./modules/home-manager
+          catppuccin.homeManagerModules.catppuccin
+	  stylix.homeManagerModules.stylix
+	];
+      };
+      "koye@laptop" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs system; };
+
+        modules = [
+          ./hosts/laptop/home.nix
           ./modules/home-manager
           catppuccin.homeManagerModules.catppuccin
 	  stylix.homeManagerModules.stylix

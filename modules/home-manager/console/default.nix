@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./aliases.nix
     ./kitty.nix
     ./git.nix
     ./nh.nix

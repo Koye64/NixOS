@@ -14,6 +14,7 @@
 	  stylus
 	  enhancer-for-youtube
 	  return-youtube-dislikes
+	  sponsorblock
 	];
 	settings = {
 	  "middlemouse.paste" = false;

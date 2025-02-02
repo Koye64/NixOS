@@ -29,6 +29,6 @@
 
   programs.cava = {
     enable = true;
-    settings.smoothing.noise_reduction = 12;
+    settings.smoothing.noise_reduction = 14;
   };
 }

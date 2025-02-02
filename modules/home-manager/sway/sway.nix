@@ -125,6 +125,7 @@
        # "${cfg.modifier}+w" = "layout tabbed";
        # "${cfg.modifier}+e" = "layout toggle split";
  
+       "${cfg.modifier}+p" = "sticky toggle";
        "${cfg.modifier}+v" = "floating toggle";
        "${cfg.modifier}+space" = "focus mode_toggle";
  

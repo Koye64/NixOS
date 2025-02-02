@@ -3,6 +3,10 @@
 {
   wayland.windowManager.sway = {
     enable = true;
+    systemd = {
+      enable = true;
+      xdgAutostart = true;
+    };
     config =
     let
       cfg = config.wayland.windowManager.sway.config;

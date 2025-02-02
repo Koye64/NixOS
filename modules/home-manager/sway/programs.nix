@@ -12,6 +12,14 @@
 
   services.swayidle = {
     enable = true;
+    systemdTarget = "sway-session.target";
+    events = [
+      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
+      { event = "lock"; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
+    ];
+    timeouts = [
+      { timeout = 60; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
+    ];
   };
 
   services.udiskie = {

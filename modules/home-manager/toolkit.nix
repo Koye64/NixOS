@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   qt = {
@@ -15,6 +15,10 @@
       name = "Papirus Dark";
       package = pkgs.papirus-icon-theme;
     };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+    gtk4.extraConfig = config.gtk.gtk3.extraConfig;
   };
 
   dconf = {

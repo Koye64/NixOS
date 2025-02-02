@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.rofi = {
@@ -29,6 +29,17 @@
 
   services.dunst = {
     enable = true;
+    iconTheme = config.gtk.iconTheme;
+    settings = {
+      global = {
+	offset = "4x4";
+	frame_width = 2;
+        corner_radius = 5;
+	progress_bar_corner_radius = 2;
+        icon_corner_radius = 5;
+	icon_corners = "all";
+      };
+    };
   };
 
   services.swayosd = {

@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     discord
+    betterdiscordctl
     cinny-desktop
   ];
 

@@ -6,9 +6,7 @@
     style = {
       name = "kvantum";
     };
-    platformTheme = {
-      name = "kvantum";
-    };
+    platformTheme.name = "kvantum";
   };
 
   gtk = {

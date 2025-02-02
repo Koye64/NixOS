@@ -12,5 +12,6 @@
     ./shell.nix
     ./stylix.nix
     ./sway.nix
+    ./toolkit.nix
   ];
 }

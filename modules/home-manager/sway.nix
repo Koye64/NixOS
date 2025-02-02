@@ -113,7 +113,7 @@
 	};
 	"HDMI-A-1" = {
 	  mode = "1440x900@75Hz";
-	  position = "0,180";
+	  position = "0,0";
 	};
       };
       workspaceOutputAssign = [

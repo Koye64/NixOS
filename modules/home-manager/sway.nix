@@ -118,6 +118,7 @@
       };
       workspaceOutputAssign = [
         { workspace = "1"; output = "DP-1"; }
+        { workspace = "1"; output = "eDP-1"; }
         { workspace = "9"; output = "HDMI-A-1"; }
       ];
       keybindings = {
@@ -146,6 +147,7 @@
        "${cfg.modifier}+Shift+Right" = "move right";
 
        "${cfg.modifier}+f" = "fullscreen toggle";
+       "${cfg.modifier}+n" = "split toggle";
        # "${cfg.modifier}+b" = "splith";
        # "${cfg.modifier}+v" = "splitv";
        # "${cfg.modifier}+a" = "focus parent";

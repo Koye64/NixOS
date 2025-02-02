@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./sway
     ./console
     ./catppuccin.nix
     ./communication.nix
@@ -10,7 +11,6 @@
     ./obs-studio.nix
     ./programs.nix
     ./stylix.nix
-    ./sway.nix
     ./toolkit.nix
   ];
 }

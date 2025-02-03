@@ -46,8 +46,8 @@
       wrap = false;
 
       tabstop = 4;
-      shiftwidth = 4;
-      expandtab = false;
+      shiftwidth = 2;
+      expandtab = true;
       softtabstop = 4;
 
       textwidth = 79;
@@ -108,6 +108,8 @@
       gitsigns.enable = true;
 
       indent-blankline.enable = true;
+
+      lazygit.enable = true;
 
       lsp = {
         enable = true;
@@ -180,7 +182,9 @@
         enable = true;
         disableNetrw = true;
         hijackCursor = true;
+        hijackNetrw = true;
         hijackUnnamedBufferWhenOpening = true;
+        openOnSetup = true;
         reloadOnBufenter = true;
         syncRootWithCwd = true;
         diagnostics.enable = true;
@@ -305,6 +309,12 @@
         mode = ["n"];
         key = "<Leader>e";
         action = "<Cmd>NvimTreeToggle<CR>";
+        inherit options;
+      }
+      {
+        mode = ["n"];
+        key = "<Leader>l";
+        action = "<Cmd>LazyGit<CR>";
         inherit options;
       }
     ];

@@ -10,6 +10,8 @@
       btop.enable = false;
       kitty.enable = false;
       swaylock.enable = false;
+      neovim.enable = false;
+      nixvim.enable = false;
     };
   };
 }

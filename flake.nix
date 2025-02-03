@@ -9,13 +9,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, catppuccin, home-manager, nixpkgs, nur, stylix, ... }@inputs:
+  outputs = { self, catppuccin, home-manager, nixpkgs, nixvim, nur, stylix, ... }@inputs:
   let
     inputs.user = "koye";
     inputs.wallpaper = ./assets/img/nix-wallpaper-nineish-catppuccin-mocha-alt.png;
@@ -34,8 +38,8 @@
 	modules = [
 	  ./hosts/default/configuration.nix
 	  ./modules/nixos
-	  nur.modules.nixos.default
 	  catppuccin.nixosModules.catppuccin
+	  nur.modules.nixos.default
 	  stylix.nixosModules.stylix
 	];
       };
@@ -45,8 +49,8 @@
 	modules = [
 	  ./hosts/laptop/configuration.nix
 	  ./modules/nixos
-	  nur.modules.nixos.default
 	  catppuccin.nixosModules.catppuccin
+	  nur.modules.nixos.default
 	  stylix.nixosModules.stylix
 	];
       };
@@ -60,6 +64,7 @@
           ./hosts/default/home.nix
           ./modules/home-manager
           catppuccin.homeManagerModules.catppuccin
+	  nixvim.homeManagerModules.nixvim
 	  stylix.homeManagerModules.stylix
 	];
       };
@@ -71,6 +76,7 @@
           ./hosts/laptop/home.nix
           ./modules/home-manager
           catppuccin.homeManagerModules.catppuccin
+	  nixvim.homeManagerModules.nixvim
 	  stylix.homeManagerModules.stylix
 	];
       };

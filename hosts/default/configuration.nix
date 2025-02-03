@@ -10,6 +10,11 @@
       ./hardware-configuration.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    "video=DP-1:1440x900"
+  ];
+
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;

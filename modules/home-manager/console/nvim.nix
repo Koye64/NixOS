@@ -19,11 +19,6 @@
       mapleader = " ";
     };
 
-    # withNodeJs = true;
-    # withPerl = true;
-    # withPython3 = true;
-    # withRuby = true;
-
     opts = {
       termguicolors = true;
 
@@ -241,6 +236,7 @@
 
       vimtex = {
         enable = true;
+        texlivePackage = pkgs.texlive.combined.scheme-full;
         settings.view_method = "zathura";
       };
 

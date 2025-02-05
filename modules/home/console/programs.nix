@@ -1,9 +1,8 @@
-{ ... }:
-
-{
+{...}: {
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;
+    lfs.enable = true;
     userEmail = "mail@koye64.com";
     userName = "Koye64";
   };
@@ -20,7 +19,7 @@
       };
       "pwn" = {
         hostname = "pwn.college";
-	user = "hacker";
+        user = "hacker";
       };
     };
   };

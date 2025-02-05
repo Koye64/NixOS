@@ -19,66 +19,73 @@
     };
   };
 
-  outputs = { self, catppuccin, home-manager, nixpkgs, nixvim, nur, stylix, ... }@inputs:
-  let
+  outputs = {
+    self,
+    catppuccin,
+    home-manager,
+    nixpkgs,
+    nixvim,
+    nur,
+    stylix,
+    ...
+  } @ inputs: let
     inputs.user = "koye";
     inputs.wallpaper = ./assets/img/nix-wallpaper-nineish-catppuccin-mocha-alt.png;
 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [ nur.overlays.default ];
+      overlays = [nur.overlays.default];
     };
-  in
-  {
+  in {
     nixosConfigurations = {
       "desktop" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system; };
+        specialArgs = {inherit inputs system;};
 
-	modules = [
-	  ./hosts/default/configuration.nix
-	  ./modules/nixos
-	  catppuccin.nixosModules.catppuccin
-	  nur.modules.nixos.default
-	  stylix.nixosModules.stylix
-	];
+        modules = [
+          ./hosts/default/configuration.nix
+          ./modules/nixos
+          catppuccin.nixosModules.catppuccin
+          nur.modules.nixos.default
+          stylix.nixosModules.stylix
+        ];
       };
       "laptop" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system; };
-        
-	modules = [
-	  ./hosts/laptop/configuration.nix
-	  ./modules/nixos
-	  catppuccin.nixosModules.catppuccin
-	  nur.modules.nixos.default
-	  stylix.nixosModules.stylix
-	];
+        specialArgs = {inherit inputs system;};
+
+        modules = [
+          ./hosts/laptop/configuration.nix
+          ./modules/nixos
+          catppuccin.nixosModules.catppuccin
+          nur.modules.nixos.default
+          stylix.nixosModules.stylix
+        ];
       };
     };
     homeConfigurations = {
       "koye@desktop" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs system; };
+        extraSpecialArgs = {inherit inputs system;};
 
         modules = [
           ./hosts/default/home.nix
-          ./modules/home-manager
+          ./modules/home
           catppuccin.homeManagerModules.catppuccin
-	  nixvim.homeManagerModules.nixvim
-	  stylix.homeManagerModules.stylix
-	];
+          nixvim.homeManagerModules.nixvim
+          stylix.homeManagerModules.stylix
+        ];
       };
       "koye@laptop" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs system; };
+        extraSpecialArgs = {inherit inputs system;};
 
         modules = [
           ./hosts/laptop/home.nix
-          ./modules/home-manager
+          ./modules/home
           catppuccin.homeManagerModules.catppuccin
-	  nixvim.homeManagerModules.nixvim
-	  stylix.homeManagerModules.stylix
-	];
+          nixvim.homeManagerModules.nixvim
+          stylix.homeManagerModules.stylix
+        ];
       };
     };
   };

@@ -6,6 +6,10 @@
     rustfmt
   ];
 
+  programs.texlive = {
+    enable = true;
+  };
+
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
@@ -236,7 +240,6 @@
 
       vimtex = {
         enable = true;
-        texlivePackage = pkgs.texlive.combined.scheme-full;
         settings.view_method = "zathura";
       };
 

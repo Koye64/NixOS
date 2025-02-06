@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file.".p10k.zsh" = {
     enable = true;
     executable = true;
@@ -24,11 +22,11 @@
     plugins = [
       {
         name = "powerlevel10k";
-	file = "powerlevel10k.zsh-theme";
-	src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
+        file = "powerlevel10k.zsh-theme";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
       }
     ];
-    
+
     history = {
       append = true;
       expireDuplicatesFirst = true;
@@ -41,7 +39,7 @@
 
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+    extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch];
   };
 
   programs.eza = {
@@ -50,6 +48,10 @@
   };
 
   programs.fastfetch = {
+    enable = true;
+  };
+
+  programs.tealdeer = {
     enable = true;
   };
 

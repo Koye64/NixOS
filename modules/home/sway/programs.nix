@@ -1,6 +1,12 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
+    brightnessctl
+    wlr-randr
+  ];
   programs.rofi = {
     enable = true;
   };
@@ -14,11 +20,20 @@
     enable = true;
     systemdTarget = "sway-session.target";
     events = [
-      { event = "before-sleep"; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
-      { event = "lock"; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
+      }
+      {
+        event = "lock";
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
+      }
     ];
     timeouts = [
-      { timeout = 60; command = "${pkgs.swaylock-effects}/bin/swaylock -fF"; }
+      {
+        timeout = 60;
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
+      }
     ];
   };
 
@@ -32,12 +47,12 @@
     iconTheme = config.gtk.iconTheme;
     settings = {
       global = {
-	offset = "4x4";
-	frame_width = 2;
+        offset = "4x4";
+        frame_width = 2;
         corner_radius = 5;
-	progress_bar_corner_radius = 2;
+        progress_bar_corner_radius = 2;
         icon_corner_radius = 5;
-	icon_corners = "all";
+        icon_corners = "all";
       };
     };
   };

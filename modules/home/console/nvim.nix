@@ -146,6 +146,60 @@
 
       markdown-preview.enable = true;
 
+      mini = {
+        enable = true;
+        modules = {
+          ai = {};
+          basics = {
+            options = {};
+            mappings = {
+              windows = true;
+              move_with_alt = true;
+              option_toggle_prefix = "<Localleader>";
+            };
+          };
+          bracketed = {};
+          extra = {};
+          move = {};
+          surround = {
+            mappings = {
+              add = "gsa";
+              delete = "gsd";
+              find = "gsf";
+              find_left = "gsF";
+              highlight = "gsh";
+              replace = "gsr";
+              update_n_lines = "gsn";
+            };
+          };
+        };
+      };
+
+      neocord = {
+        enable = true;
+        settings = {
+          auto_update = true;
+          blacklist = [];
+          debounce_timeout = 10;
+          editing_text = "Editing %s";
+          enable_line_number = false;
+          file_assets = null;
+          file_explorer_text = "Browsing %s";
+          git_commit_text = "Committing changes...";
+          global_timer = false;
+          line_number_text = "Line %s out of %s";
+          log_level = null;
+          logo = "auto";
+          logo_tooltip = null;
+          main_image = "language";
+          plugin_manager_text = "Managing plugins...";
+          reading_text = "Reading %s";
+          show_time = true;
+          terminal_text = "Using the terminal";
+          workspace_text = "Working on %s";
+        };
+      };
+
       noice = {
         enable = true;
         settings = {

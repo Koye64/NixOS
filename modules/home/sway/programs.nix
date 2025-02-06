@@ -14,6 +14,15 @@
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
+    settings = {
+      clock = true;
+      effect-blur = "16x4";
+      indicator = true;
+      indicator-radius = 100;
+      indicator-thickness = 16;
+      screenshots = true;
+      timestr = "%I:%M %p";
+    };
   };
 
   services.swayidle = {

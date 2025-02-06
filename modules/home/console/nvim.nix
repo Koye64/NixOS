@@ -4,11 +4,8 @@
     stylua
     alejandra
     rustfmt
+    texliveFull
   ];
-
-  programs.texlive = {
-    enable = true;
-  };
 
   programs.nixvim = {
     enable = true;
@@ -69,6 +66,7 @@
             {name = "nvim_lsp";}
             {name = "nvim_lsp_signature_help";}
             {name = "path";}
+            {name = "vimtex";}
           ];
           mapping = {
             "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
@@ -241,6 +239,7 @@
       vimtex = {
         enable = true;
         settings.view_method = "zathura";
+        texlivePackage = pkgs.texliveFull;
       };
 
       web-devicons.enable = true;

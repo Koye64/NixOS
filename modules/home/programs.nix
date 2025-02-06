@@ -4,4 +4,8 @@
     vlc
     eclipses.eclipse-sdk
   ];
+
+  programs.zathura = {
+    enable = true;
+  };
 }

@@ -1,4 +1,6 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [sshfs];
+
   programs.git = {
     enable = true;
     diff-so-fancy.enable = true;

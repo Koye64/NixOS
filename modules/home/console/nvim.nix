@@ -127,6 +127,7 @@
           lua_ls.enable = true;
           marksman.enable = true;
           nixd.enable = true;
+          pyright.enable = true;
           rust_analyzer.enable = true;
           rust_analyzer.installCargo = true;
           rust_analyzer.installRustc = true;

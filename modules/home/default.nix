@@ -1,9 +1,9 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./sway
     ./console
+    ./nixpkgs
+
     ./catppuccin.nix
     ./communication.nix
     ./firefox.nix

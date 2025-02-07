@@ -1,9 +1,7 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   programs.nh = {
     enable = true;
     clean.enable = true;
   };
-  environment.sessionVariables."FLAKE" = "/home/${inputs.user}/.config/nixos";
+  environment.sessionVariables."FLAKE" = "/home/${inputs.user}/.nixos";
 }

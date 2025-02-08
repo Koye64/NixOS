@@ -165,11 +165,11 @@
           surround = {
             mappings = {
               add = "gsa";
-              delete = "gsd";
+              delete = "ds";
               find = "gsf";
               find_left = "gsF";
               highlight = "gsh";
-              replace = "gsr";
+              replace = "cs";
               update_n_lines = "gsn";
             };
           };
@@ -213,22 +213,6 @@
       };
 
       nvim-autopairs.enable = true;
-
-      nvim-surround = {
-        settings.keymaps = {
-          insert = "<C-g>sa";
-          insert_line = "<C-g>sA";
-          normal = "gs";
-          normal_cur = "gss";
-          normal_line = "gS";
-          normal_cur_line = "gSS";
-          visual = "gs";
-          visual_line = "gS";
-          delete = "ds";
-          change = "cs";
-          change_line = "cS";
-        };
-      };
 
       nvim-tree = {
         enable = true;
@@ -301,7 +285,12 @@
 
       which-key.enable = true;
 
-      yanky.enable = true;
+      yanky = {
+        enable = true;
+        settings = {
+          highlight.timer = 150;
+        };
+      };
     };
 
     keymaps = let
@@ -368,6 +357,30 @@
         mode = ["n"];
         key = "<Leader>l";
         action = "<Cmd>LazyGit<CR>";
+        inherit options;
+      }
+      {
+        mode = ["n" "x"];
+        key = "p";
+        action = "<Plug>(YankyPutAfter)";
+        inherit options;
+      }
+      {
+        mode = ["n" "x"];
+        key = "P";
+        action = "<Plug>(YankPutBefore)";
+        inherit options;
+      }
+      {
+        mode = ["n" "x"];
+        key = "gp";
+        action = "<Plug>(YankyGPutAfter)";
+        inherit options;
+      }
+      {
+        mode = ["n" "x"];
+        key = "gP";
+        action = "<Plug>(YankGPutBefore)";
         inherit options;
       }
     ];

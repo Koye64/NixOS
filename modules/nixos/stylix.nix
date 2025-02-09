@@ -1,6 +1,8 @@
-{ inputs, pkgs, ... }:
-
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
@@ -13,11 +15,11 @@
       };
       sansSerif = {
         package = pkgs.nerd-fonts.noto;
-	name = "Noto Sans Nerd Font";
+        name = "Noto Sans Nerd Font";
       };
       serif = {
         package = pkgs.nerd-fonts.noto;
-	name = "Noto Serif Nerd Font";
+        name = "Noto Serif Nerd Font";
       };
     };
 

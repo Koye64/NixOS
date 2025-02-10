@@ -42,7 +42,7 @@
         titlebar = false;
         criteria = [
           {title = "Steam - Update News";}
-          {class = "Pavucontrol";}
+          {app_id = "org.pulseaudio.pavucontrol";}
           {title = "Calculator";}
           {title = "Picture-in-Picture";}
         ];

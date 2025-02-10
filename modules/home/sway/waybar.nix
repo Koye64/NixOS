@@ -154,7 +154,7 @@
               ""
             ];
           };
-          on-click = "${pkgs.pavucontrol}";
+          on-click = "${lib.getExe pkgs.pavucontrol}";
           ignored-sinks = [
             "Easy Effects Sink"
           ];

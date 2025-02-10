@@ -104,6 +104,13 @@
         };
       };
 
+      assigns = {
+        "3" = [{title = "Steam";}];
+        "8" = [{app_id = "cinny";}];
+        "9" = [{class = "discord";}];
+        "10" = [{class = "Spotify";}];
+      };
+
       workspaceOutputAssign = [
         {
           workspace = "1";
@@ -174,13 +181,6 @@
 
         "${cfg.modifier}+f" = "fullscreen toggle";
         "${cfg.modifier}+n" = "split toggle";
-        # "${cfg.modifier}+b" = "splith";
-        # "${cfg.modifier}+v" = "splitv";
-        # "${cfg.modifier}+a" = "focus parent";
-        #
-        # "${cfg.modifier}+s" = "layout stacking";
-        # "${cfg.modifier}+w" = "layout tabbed";
-        # "${cfg.modifier}+e" = "layout toggle split";
 
         "${cfg.modifier}+p" = "sticky toggle";
         "${cfg.modifier}+v" = "floating toggle";

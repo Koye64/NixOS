@@ -105,7 +105,10 @@
       };
 
       assigns = {
-        "3" = [{title = "Steam";}];
+        "3" = [
+          {title = "Steam";}
+          {class = "Minecraft*";}
+        ];
         "8" = [{app_id = "cinny";}];
         "9" = [{class = "discord";}];
         "10" = [{class = "Spotify";}];

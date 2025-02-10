@@ -368,7 +368,7 @@
       {
         mode = ["n" "x"];
         key = "P";
-        action = "<Plug>(YankPutBefore)";
+        action = "<Plug>(YankyPutBefore)";
         inherit options;
       }
       {
@@ -380,7 +380,7 @@
       {
         mode = ["n" "x"];
         key = "gP";
-        action = "<Plug>(YankGPutBefore)";
+        action = "<Plug>(YankyGPutBefore)";
         inherit options;
       }
     ];

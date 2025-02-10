@@ -5,6 +5,8 @@
     eclipses.eclipse-sdk
   ];
 
+  services.easyeffects.enable = true;
+
   programs.zathura = {
     enable = true;
   };

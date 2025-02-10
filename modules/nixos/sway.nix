@@ -17,6 +17,7 @@
   };
 
   services.power-profiles-daemon.enable = true;
+  programs.dconf.enable = true;
 
   programs.waybar = {
     enable = true;

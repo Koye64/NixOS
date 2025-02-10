@@ -8,6 +8,7 @@
     ./communication.nix
     ./firefox.nix
     ./fonts.nix
+    ./games.nix
     ./obs-studio.nix
     ./programs.nix
     ./stylix.nix

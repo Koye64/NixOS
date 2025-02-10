@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     pavucontrol
   ];
@@ -46,7 +48,7 @@
         "sway/scratchpad" = {
           format = "{icon} {count}";
           show-empty = false;
-  	  format-icons = [
+          format-icons = [
             ""
             ""
           ];
@@ -62,26 +64,26 @@
             unlocked = "";
           };
         };
-	idle_inhibitor = {
+        idle_inhibitor = {
           format = "{icon}";
           format-icons = {
             activated = "awake";
             deactivated = "passive";
           };
         };
-	tray = {
-	  icon-size = 18;
-	  spacing = 10;
-	};
-	clock = {
-	  tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-	  interval = 10;
-	  format = "{:%A %I:%M %p}";
-	  format-alt = "{:%B %d, %Y}";
-	};
-	backlight = {
-	  format = "{percent}% {icon}";
-	  format-icons = [
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+        };
+        clock = {
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          interval = 10;
+          format = "{:%A %I:%M %p}";
+          format-alt = "{:%B %d, %Y}";
+        };
+        backlight = {
+          format = "{percent}% {icon}";
+          format-icons = [
             ""
             ""
             ""
@@ -91,9 +93,11 @@
             ""
             ""
             ""
-	  ];
-	};
-	battery = {
+          ];
+          on-scroll-up = "${lib.getExe pkgs.brightnessctl} set +1%";
+          on-scroll-down = "${lib.getExe pkgs.brightnessctl} set 1%-";
+        };
+        battery = {
           states = {
             warning = 30;
             critical = 15;
@@ -111,7 +115,7 @@
             " "
           ];
         };
-	power-profiles-daemon = {
+        power-profiles-daemon = {
           format = "{icon}";
           tooltip-format = "Power profile: {profile}\nDriver: {driver}";
           tooltip = true;
@@ -122,7 +126,7 @@
             power-saver = "";
           };
         };
-	network = {
+        network = {
           format-wifi = "{essid} ({signalStrength}%)  ";
           format-ethernet = "{ipaddr}/{cidr}  ";
           tooltip-format = "{ifname} via {gwaddr} 󰩠";
@@ -130,7 +134,7 @@
           format-disconnected = "Disconnected ⚠";
           format-alt = "{ipaddr}/{cidr}";
         };
-	pulseaudio = {
+        pulseaudio = {
           scroll-step = 1;
           format = "{volume}% {icon}  {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";

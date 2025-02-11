@@ -155,6 +155,10 @@
           workspace = "9";
           output = "HDMI-A-1";
         }
+        {
+          workspace = "10";
+          output = "HDMI-A-1";
+        }
       ];
 
       keybindings = {

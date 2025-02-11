@@ -62,6 +62,7 @@
         progress_bar_corner_radius = 2;
         icon_corner_radius = 5;
         icon_corners = "all";
+        follow = "mouse";
       };
     };
   };

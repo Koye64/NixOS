@@ -36,5 +36,6 @@
   programs.cava = {
     enable = true;
     settings.smoothing.noise_reduction = 14;
+    settings.general.framerate = 144;
   };
 }

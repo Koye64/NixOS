@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   qt = {
     enable = true;
     style = {
@@ -18,7 +20,6 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-    gtk4.extraConfig = config.gtk.gtk3.extraConfig;
   };
 
   dconf = {

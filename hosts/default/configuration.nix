@@ -11,7 +11,6 @@
     ./hardware-configuration.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
     "video=DP-1:1920x1080@144.001007"
   ];

@@ -17,7 +17,7 @@
     in {
       terminal = "${pkgs.kitty}/bin/kitty";
       modifier = "Mod4";
-      menu = "${lib.getExe pkgs.rofi} -show drun";
+      menu = "${lib.getExe config.programs.rofi.finalPackage} -show drun";
       bars = [];
       defaultWorkspace = "workspace number 1";
 

@@ -10,7 +10,6 @@
     enable = true;
     systemd = {
       enable = true;
-      target = "sway-session.target";
     };
     style = lib.mkForce ./waybar.css;
     settings = {

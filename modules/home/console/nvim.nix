@@ -39,7 +39,7 @@
       list = true;
       listchars = "trail:-,tab:▎─╴,nbsp:␣";
 
-      wrap = false;
+      wrap = true;
 
       tabstop = 4;
       shiftwidth = 2;
@@ -47,7 +47,7 @@
       softtabstop = 4;
 
       textwidth = 79;
-      formatoptions = "tco/2qwanvblj";
+      formatoptions = "tco/2qwnvblj";
 
       smartcase = true;
     };

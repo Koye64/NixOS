@@ -3,6 +3,7 @@
     spotify
     vlc
     eclipses.eclipse-sdk
+    parsec-bin
   ];
 
   services.easyeffects.enable = true;

@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./boot.nix
     ./catppuccin.nix
@@ -9,6 +7,7 @@
     ./gaming.nix
     ./nh.nix
     ./nix.nix
+    ./packages.nix
     ./shell.nix
     ./stylix.nix
     ./sway.nix

@@ -1,9 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    eclipses.eclipse-sdk
+    jetbrains.idea-community
+    obsidian
+    parsec-bin
     spotify
     vlc
-    eclipses.eclipse-sdk
-    parsec-bin
   ];
 
   services.easyeffects.enable = true;

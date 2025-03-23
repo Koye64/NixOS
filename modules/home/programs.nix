@@ -5,6 +5,7 @@
     obsidian
     parsec-bin
     spotify
+    telegram-desktop
     vlc
   ];
 

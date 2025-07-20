@@ -12,6 +12,7 @@
       "NixOS"
       ".gnupg"
       ".nixops"
+      ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
       {

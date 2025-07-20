@@ -1,11 +1,21 @@
 { inputs, pkgs, lib, config, ... }:
 {
+  home.sessionVariables = {
+    PAGER = "${lib.getExe config.programs.bat.package}";
+  };
   home.shellAliases = {
     lg = "${lib.getExe config.programs.lazygit.package}";
+    man = "${lib.getExe pkgs.bat-extras.batman}";
   };
   programs = {
     bat = {
       enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batgrep
+        batwatch
+      ];
     };
     eza = {
       enable = true;

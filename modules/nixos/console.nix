@@ -1,7 +1,15 @@
 { pkgs, ... }:
 {
   programs = {
-    bat = { enable = true; };
+    bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batgrep
+        batwatch
+      ];
+    };
     fish = { enable = true; };
     git = {
       enable = true;

@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   imports = [
     ./catppuccin.nix
@@ -6,6 +6,7 @@
     ./git.nix
     ./hyprland.nix
     ./impermanence.nix
+    ./nixvim.nix
   ];
 
   programs.home-manager.enable = true;

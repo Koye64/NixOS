@@ -15,6 +15,16 @@
     withPerl = true;
     withPython3 = true;
     withRuby = true;
-    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        integrations.native_lsp.underlines = {
+          errors = [ "undercurl" ];
+          hints = [ "undercurl" ];
+          warnings = [ "undercurl" ];
+          information = [ "undercurl" ];
+        };
+      };
+    };
   };
 }

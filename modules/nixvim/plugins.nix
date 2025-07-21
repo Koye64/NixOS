@@ -10,7 +10,9 @@
     };
     bufferline = {
       enable = true; settings.options = {
+        always_show_bufferline = false;
         buffer_close_icon = "";
+        close_icon = "";
       };
     };
     conform-nvim = { enable = true; };
@@ -60,6 +62,7 @@
       };
     };
     render-markdown = { enable = true; };
+    toggleterm = { enable = true; };
     tmux-navigator = { enable = true; };
     treesitter = { enable = true; };
     treesj = { enable = true; };

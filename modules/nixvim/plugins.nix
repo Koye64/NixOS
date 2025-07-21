@@ -19,7 +19,6 @@
     friendly-snippets = { enable = true; };
     gitsigns = { enable = true; };
     indent-blankline = { enable = true; };
-    java = { enable = true; };
     lazygit = { enable = true; };
     lualine = {
       enable = true;

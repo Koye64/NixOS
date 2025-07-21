@@ -2,6 +2,7 @@
 {
   home.sessionVariables = {
     PAGER = "${lib.getExe config.programs.bat.package}";
+    fish_greeting = "";
   };
   home.shellAliases = {
     lg = "${lib.getExe config.programs.lazygit.package}";
@@ -29,6 +30,7 @@
     };
     fish = {
       enable = true;
+      preferAbbrs = true;
     };
     hyfetch = {
       enable = true;

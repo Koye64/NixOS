@@ -18,7 +18,12 @@
     gitsigns = { enable = true; };
     indent-blankline = { enable = true; };
     lazygit = { enable = true; };
-    lualine = { enable = true; };
+    lualine = {
+      enable = true;
+      settings.options = {
+        globalstatus = true;
+      };
+    };
     noice = {
       enable = true;
       settings = {
@@ -32,7 +37,29 @@
     };
     nvim-autopairs = { enable = true; };
     nvim-surround = { enable = true; };
-    nvim-tree = { enable = true; };
+    nvim-tree = {
+      enable = true;
+      autoClose = true;
+      disableNetrw = true;
+      hijackCursor = true;
+      hijackNetrw = true;
+      hijackUnnamedBufferWhenOpening = true;
+      openOnSetup = true;
+      openOnSetupFile = true;
+      syncRootWithCwd = true;
+      actions.changeDir.enable = true;
+      modified = { enable = true; };
+      tab.sync = {
+        close = true;
+        open = true;
+      };
+      updateFocusedFile = {
+        enable = true;
+        updateRoot = true;
+      };
+    };
+    render-markdown = { enable = true; };
+    tmux-navigator = { enable = true; };
     treesitter = { enable = true; };
     treesj = { enable = true; };
     vimtex = { enable = true; };

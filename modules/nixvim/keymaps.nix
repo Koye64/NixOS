@@ -36,5 +36,28 @@
     }
   ];
   programs.nixvim.keymaps = [
+    { action = "<CMD>NvimTreeToggle<Enter>";
+      key = "<leader>e";
+    }
+    { action = "<CMD>bnext<Enter>";
+      key = "L";
+      mode = "n";
+    }
+    { action = "<CMD>bprev<Enter>";
+      key = "H";
+      mode = "n";
+    }
+    { action = "<CMD>bdelete<Enter>";
+      key = "<leader>b";
+      mode = "n";
+    }
+    { action = "<CMD>LazyGit<Enter>";
+      key = "<leader>g";
+      mode = "n";
+    }
+    { action = "<CMD>ToggleTerm<Enter>";
+      key = "<C-/>";
+      mode = [ "n" "i" "v" "s" "t" ];
+    }
   ];
 }

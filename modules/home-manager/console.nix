@@ -31,7 +31,7 @@
     };
     fish = {
       enable = true;
-      preferAbbrs = true;
+      preferAbbrs = false;
     };
     hyfetch = {
       enable = true;

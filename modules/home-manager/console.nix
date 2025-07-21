@@ -6,6 +6,7 @@
   };
   home.shellAliases = {
     lg = "${lib.getExe config.programs.lazygit.package}";
+    cat = "${lib.getExe config.programs.bat.package}";
     man = "${lib.getExe pkgs.bat-extras.batman}";
   };
   programs = {
@@ -46,7 +47,12 @@
     kitty = {
       enable = true;
     };
-    lazygit = { enable = true; };
+    lazygit = {
+      enable = true;
+      settings = {
+        disableStartupPopups = true;
+      };
+    };
     neovim = {
       enable = true;
       defaultEditor = true;

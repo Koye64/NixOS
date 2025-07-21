@@ -24,6 +24,7 @@
         globalstatus = true;
       };
     };
+    markdown-preview = { enable = true; };
     noice = {
       enable = true;
       settings = {

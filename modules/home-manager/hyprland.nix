@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       ecosystem = {
-	no_update_news = true;
+        no_update_news = true;
         no_donation_nag = true;
       };
       general = {

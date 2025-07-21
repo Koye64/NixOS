@@ -2,8 +2,9 @@
 {
   imports = [
     ./keymaps.nix
-    ./plugins.nix
     ./lsp.nix
+    ./plugins.nix
+    ./settings.nix
   ];
 
   programs.nixvim = {
@@ -14,10 +15,6 @@
     withPerl = true;
     withPython3 = true;
     withRuby = true;
-    clipboard = {
-      register = "unnamedplus";
-      providers.wl-copy.enable = true;
-    };
     colorschemes.catppuccin.enable = true;
   };
 }

@@ -55,6 +55,9 @@
       key = "<leader>g";
       mode = "n";
     }
+    { action = "<CMD>MarkdownPreviewToggle<Enter>";
+      key = "<leader>p";
+    }
     { action = "<CMD>ToggleTerm<Enter>";
       key = "<C-/>";
       mode = [ "n" "i" "v" "s" "t" ];

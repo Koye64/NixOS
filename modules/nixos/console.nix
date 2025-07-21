@@ -16,14 +16,6 @@
       lfs.enable = true;
     };
     lazygit = { enable = true; };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      withRuby = true;
-      withPython3 = true;
-      withNodeJs = true;
-      vimAlias = true;
-    };
     starship = {
       enable = true;
       transientPrompt = { enable = true; };

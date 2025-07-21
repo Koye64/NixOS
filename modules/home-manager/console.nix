@@ -53,15 +53,6 @@
         disableStartupPopups = true;
       };
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-      withNodeJs = true;
-      withPython3 = true;
-      withRuby = true;
-    };
     nh = {
       enable = true;
       flake = "/home/koye/NixOS";
@@ -73,7 +64,6 @@
         add_newline = false;
       };
     };
-    vim = { enable = true; };
     zoxide = {
       enable = true;
       options = [

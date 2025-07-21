@@ -63,4 +63,12 @@
       mode = [ "n" "i" "v" "s" "t" ];
     }
   ];
+  programs.nixvim.plugins.telescope.keymaps = {
+    "<leader>f" = {
+      action = "find_files";
+      options = {
+        desc = "Telescope find files";
+      };
+    };
+  };
 }

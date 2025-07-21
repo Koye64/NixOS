@@ -62,8 +62,9 @@
       };
     };
     render-markdown = { enable = true; };
-    toggleterm = { enable = true; };
+    telescope = { enable = true; };
     tmux-navigator = { enable = true; };
+    toggleterm = { enable = true; };
     treesitter = { enable = true; };
     treesj = { enable = true; };
     vimtex = { enable = true; };

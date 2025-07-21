@@ -5,7 +5,6 @@
     ./console.nix
     ./git.nix
     ./hyprland.nix
-    ./impermanence.nix
     ./nixvim.nix
   ];
 

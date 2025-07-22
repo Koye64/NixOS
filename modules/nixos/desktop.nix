@@ -24,8 +24,7 @@
     };
   };
   services = {
-    greetd = {
-      enable = true;
-    };
+    greetd = { enable = true; };
+    udisks2 = { enable = true; };
   };
 }

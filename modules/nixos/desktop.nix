@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs = {
+    regreet = {
+      enable = true;
+      cageArgs = [ "-s" "-m" "last" ];
+    };
     steam = {
       enable = true;
       gamescopeSession = { enable = true; };

@@ -30,6 +30,7 @@
         ".local/share/keyrings"
         ".local/share/direnv"
         ".local/share/Steam"
+        ".mozilla/firefox"
       ];
     };
   };

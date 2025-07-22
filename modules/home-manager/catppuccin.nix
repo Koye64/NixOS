@@ -6,5 +6,6 @@
     enable = true;
     flavor = "mocha";
     accent = "blue";
+    firefox.profiles.default.enable = false;
   };
 }

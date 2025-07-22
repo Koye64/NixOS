@@ -3,6 +3,7 @@
   imports = [
     ./catppuccin.nix
     ./console.nix
+    ./desktop.nix
     ./git.nix
     ./hyprland.nix
     ./nixvim.nix

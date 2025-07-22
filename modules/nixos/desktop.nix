@@ -4,6 +4,15 @@
     regreet = {
       enable = true;
       cageArgs = [ "-s" "-m" "last" ];
+      settings = {
+        background = {
+          path = ../../assets/img/nix-wallpaper.png;
+          fit = "Fill";
+        };
+        GTK = {
+          application_prefer_dark_theme = true;
+        };
+      };
     };
     steam = {
       enable = true;

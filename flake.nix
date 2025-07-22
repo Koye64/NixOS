@@ -22,14 +22,14 @@
           { home-manager.users.koye = ./hosts/qemu/home.nix; }
         ];
       };
-      # headroom = nixpkgs.lib.nixosSystem {
-      #   specialArgs = { inherit inputs; };
-      #   modules = [
-      #     ./modules/nixos
-      #     ./hosts/headroom/configuration.nix
-      #     { home-manager.users.koye = ./hosts/headroom/home.nix; }
-      #   ];
-      # };
+      headroom = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules/nixos
+          ./hosts/headroom/configuration.nix
+          { home-manager.users.koye = ./hosts/headroom/home.nix; }
+        ];
+      };
     };
   };
 }

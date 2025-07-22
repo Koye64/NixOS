@@ -24,11 +24,8 @@
         "Documents"
         "Videos"
         "NixOS"
-        ".gnupg"
-        ".nixops"
         ".ssh"
         ".local/share/keyrings"
-        ".local/share/direnv"
         ".local/share/Steam"
         ".mozilla/firefox"
       ];

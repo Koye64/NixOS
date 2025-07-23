@@ -19,6 +19,7 @@
         batwatch
       ];
     };
+    btop = { enable = true; };
     eza = {
       enable = true;
       enableFishIntegration = true;

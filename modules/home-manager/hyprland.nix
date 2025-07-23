@@ -1,8 +1,12 @@
 { inputs, pkgs, lib, config, ... }:
 {
+  # source session variables through UWSM
+  xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = {
+    settings = let
+      mod = "SUPER";
+    in {
       general = {
         border_size = 2;
         no_border_on_floating = false;
@@ -17,7 +21,7 @@
         no_focus_fallback = false;
         resize_on_border = true;
         extend_border_grab_area = 8;
-        hover_icon_on_border = false;
+        hover_icon_on_border = true;
         allow_tearing = true;
         resize_corner = 0;
         snap = {
@@ -212,7 +216,7 @@
         default_monitor = "HDMI-A-2";
         zoom_factor = 1;
         zoom_rigid = false;
-        enable_hyprcursor = false;
+        enable_hyprcursor = true;
         hide_on_key_press = false;
         hide_on_touch = true;
         use_cpu_buffer = 2;
@@ -235,37 +239,40 @@
         default_split_ratio = 1;
         split_bias = 0;
       };
-      bind = [
-        "SUPER, C, killactive,"
-        "SUPER, V, togglefloating,"
-        "SUPER, F, fullscreen,"
-        "SUPER, Q, exec, uwsm stop"
-        "SUPER, R, exec, ${lib.getExe config.programs.fuzzel.package}"
-        "SUPER, RETURN, exec, ${lib.getExe config.programs.kitty.package}"
-        "SUPER, M, exec, ${lib.getExe config.programs.hyprlock.package}"
-        "SUPER, H, movefocus, l"
-        "SUPER, left, movefocus, l"
-        "SUPER, L, movefocus, r"
-        "SUPER, right, movefocus, r"
-        "SUPER, K, movefocus, u"
-        "SUPER, up, movefocus, u"
-        "SUPER, J, movefocus, d"
-        "SUPER, down, movefocus, d"
-        "SUPER, mouse_down, workspace, m-1"
-        "SUPER, mouse_up, workspace, m+1"
-        "SUPER, 0, workspace, 10"
-        "SUPER SHIFT, 0, movetoworkspace, 10"
+      bind = let
+        uwsm = "uwsm app --";
+      in [
+        "${mod}, C, killactive,"
+        "${mod}, V, togglefloating,"
+        "${mod}, F, fullscreen,"
+        "${mod}, Q, exec, uwsm stop"
+        "${mod}, R, exec, ${uwsm} ${lib.getExe config.programs.fuzzel.package}"
+        "${mod}, RETURN, exec, ${uwsm} ${lib.getExe config.programs.kitty.package}"
+        "${mod}, M, exec, ${uwsm} ${lib.getExe config.programs.hyprlock.package}"
+        "${mod} SHIFT, S, exec, ${uwsm} ${lib.getExe pkgs.hyprshot} -m region"
+        "${mod}, H, movefocus, l"
+        "${mod}, left, movefocus, l"
+        "${mod}, L, movefocus, r"
+        "${mod}, right, movefocus, r"
+        "${mod}, K, movefocus, u"
+        "${mod}, up, movefocus, u"
+        "${mod}, J, movefocus, d"
+        "${mod}, down, movefocus, d"
+        "${mod}, mouse_down, workspace, m-1"
+        "${mod}, mouse_up, workspace, m+1"
+        "${mod}, 0, workspace, 10"
+        "${mod} SHIFT, 0, movetoworkspace, 10"
       ] ++ (
         builtins.concatLists (builtins.genList (i:
           let workspace = i + 1; in [
-            "SUPER, code:1${toString i}, workspace, ${toString workspace}"
-            "SUPER SHIFT, code:1${toString i}, movetoworkspace, ${toString workspace}"
+            "${mod}, code:1${toString i}, workspace, ${toString workspace}"
+            "${mod} SHIFT, code:1${toString i}, movetoworkspace, ${toString workspace}"
           ]
         )9)
       );
       bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
+        "${mod}, mouse:272, movewindow"
+        "${mod}, mouse:273, resizewindow"
       ];
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
@@ -300,10 +307,19 @@
     };
   };
   programs = {
-    hyprlock = { enable = true; };
+    hyprlock = {
+      enable = true;
+      settings = {
+        background = [
+          { path = "screenshot";
+            blur_passes = 3;
+            blur_size = 8;
+          }
+        ];
+      };
+    };
   };
   services = {
-    hyprpolkitagent.enable = true;
     hyprpaper = {
       enable = true;
       settings = let
@@ -313,10 +329,11 @@
         wallpaper = [ ("," + wallpaper) ];
       };
     };
+    hyprpolkitagent.enable = true;
     hypridle = {
       enable = true;
       settings = let
-        hyprlock = "${lib.getExe config.programs.hyprlock.package}";
+        hyprlock = "uwsm app -- ${lib.getExe config.programs.hyprlock.package}";
       in {
         general = {
           lock_cmd = hyprlock;

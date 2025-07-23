@@ -168,7 +168,7 @@
       binds = {
         pass_mouse_when_bound = false;
         scroll_event_delay = 0;
-        workspace_back_and_forth = true;
+        workspace_back_and_forth = false;
         hide_special_on_workspace_change = true;
         allow_workspace_cycles = false;
         workspace_center_on = 1;
@@ -205,7 +205,10 @@
         min_refresh_rate = 60;
         hotspot_padding = 1;
         inactive_timeout = 0;
-        no_warps = true;
+        no_warps = false;
+        persistent_warps = true;
+        warp_on_change_workspace = 0;
+        warp_on_toggle_special = 0;
         default_monitor = "HDMI-A-2";
         zoom_factor = 1;
         zoom_rigid = false;

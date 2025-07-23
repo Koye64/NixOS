@@ -1,6 +1,5 @@
 # NixOS
 
-This is Koye's NixOS flake with [Home Manager](https://www.github.com/nix-community/home-manager) and [Impermanence](https://www.github.com/nix-community/impermanence).
+This is Koye's NixOS flake with [Home Manager](https://www.github.com/nix-community/home-manager), [NixVim](https://github.com/nix-community/nixvim), and [Impermanence](https://www.github.com/nix-community/impermanence).
 
-`/persist/home/koye` must be manually created and owned by uid 1000; see host's `hardware-configuration.nix`.
-
+See hosts' hardware-configuration.nix for drive layout prerequisites for install; use own hashed password in configuration.nix.

@@ -7,5 +7,6 @@
     flavor = "mocha";
     accent = "blue";
     firefox.profiles.default.enable = false;
+    kvantum.enable = false;
   };
 }

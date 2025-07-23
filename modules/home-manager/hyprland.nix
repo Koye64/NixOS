@@ -301,7 +301,6 @@
   };
   programs = {
     hyprlock = { enable = true; };
-    fuzzel = { enable = true; };
   };
   services = {
     hyprpolkitagent.enable = true;

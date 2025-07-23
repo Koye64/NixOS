@@ -1,8 +1,37 @@
-{ ... }:
+{ config, lib, pkgs, ... }:
 {
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans"];
+        emoji = [ "Twitter Color Emoji" ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+      };
+    };
+  };
+  gtk = { enable = true; };
+  qt = { enable = true; };
   programs = {
     firefox = {
       enable = true;
+    };
+    fuzzel = {
+      enable = true;
+      settings = let
+        hyprlandSettings = config.wayland.windowManager.hyprland.settings;
+      in {
+        main = {
+          use-bold = true;
+          launch-prefix = "uwsm app --";
+          placeholder = "Launch...";
+          prompt = ''"❯ "'';
+          terminal = "${lib.getExe config.programs.kitty.package}";
+        };
+        border.width = hyprlandSettings.general.border_size;
+        border.radius = hyprlandSettings.decoration.rounding;
+      };
     };
   };
   services = {

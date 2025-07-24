@@ -8,5 +8,4 @@
     hyprlock.enable = true;
     uwsm.enable = true;
   };
-  services.hypridle.enable = true;
 }

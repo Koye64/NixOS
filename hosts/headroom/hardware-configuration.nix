@@ -8,6 +8,10 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = [
+    "video=HDMI-A-1:1440x900@75"
+    "video=HDMI-A-2:1920x1080@144"
+  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =

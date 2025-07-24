@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    btop
-  ];
+  imports = [ ../../modules/home-manager ];
 }

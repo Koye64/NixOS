@@ -20,6 +20,7 @@
       ];
     };
     btop = { enable = true; };
+    cava = { enable = true; };
     eza = {
       enable = true;
       enableFishIntegration = true;

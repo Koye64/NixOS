@@ -42,7 +42,6 @@
     nvim-surround = { enable = true; };
     nvim-tree = {
       enable = true;
-      autoClose = true;
       disableNetrw = true;
       hijackCursor = true;
       hijackNetrw = true;

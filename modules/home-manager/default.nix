@@ -6,6 +6,7 @@
     ./catppuccin.nix
     ./console.nix
     ./desktop.nix
+    ./fonts.nix
     ./git.nix
     ./graphicalToolkit.nix
     ./nixvim.nix

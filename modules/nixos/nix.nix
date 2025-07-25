@@ -2,7 +2,7 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nixpkgs.config = { allowBroken = false; allowUnfree = true; };
+  nixpkgs.config = import ./nixpkgs-config.nix;
 
   programs.nh = {
     enable = true;

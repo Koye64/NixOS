@@ -62,6 +62,9 @@
     starship = {
       enable = true;
       enableTransience = true;
+      settings = {
+        add_newline = false;
+      };
     };
     zoxide = {
       enable = true;

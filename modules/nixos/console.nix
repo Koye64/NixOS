@@ -19,6 +19,9 @@
     starship = {
       enable = true;
       transientPrompt = { enable = true; };
+      settings = {
+        add_newline = false;
+      };
     };
     vim = { enable = true; };
     zoxide = {

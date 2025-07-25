@@ -14,14 +14,27 @@
       "${mod}, RETURN, exec, ${uwsm} ${lib.getExe config.programs.kitty.package}"
       "${mod}, M, exec, ${uwsm} ${lib.getExe config.programs.hyprlock.package}"
       "${mod} SHIFT, S, exec, ${uwsm} ${lib.getExe pkgs.hyprshot} -m region"
+
       "${mod}, H, movefocus, l"
       "${mod}, left, movefocus, l"
-      "${mod}, L, movefocus, r"
-      "${mod}, right, movefocus, r"
-      "${mod}, K, movefocus, u"
-      "${mod}, up, movefocus, u"
+      "${mod} SHIFT, H, movewindow, l"
+      "${mod} SHIFT, left, movewindow, l"
+
       "${mod}, J, movefocus, d"
       "${mod}, down, movefocus, d"
+      "${mod} SHIFT, J, movewindow, d"
+      "${mod} SHIFT, down, movewindow, d"
+
+      "${mod}, K, movefocus, u"
+      "${mod}, up, movefocus, u"
+      "${mod} SHIFT, K, movewindow, u"
+      "${mod} SHIFT, up, movewindow, u"
+
+      "${mod}, L, movefocus, r"
+      "${mod}, right, movefocus, r"
+      "${mod} SHIFT, L, movewindow, r"
+      "${mod} SHIFT, right, movewindow, r"
+
       "${mod}, mouse_down, workspace, m-1"
       "${mod}, mouse_up, workspace, m+1"
       "${mod}, 0, workspace, 10"

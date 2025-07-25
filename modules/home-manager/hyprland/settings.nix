@@ -41,7 +41,6 @@
       swallow_regex = "kitty";
       focus_on_activate = true;
       mouse_move_focuses_monitor = true;
-      render_ahead_of_time = false;
       allow_session_lock_restore = true;
       close_special_on_empty = true;
       new_window_takes_over_fullscreen = 0;
@@ -78,8 +77,6 @@
       create_abstract_socket = false;
     };
     render = {
-      explicit_sync = 2;
-      explicit_sync_kms = 2;
       direct_scanout = 1;
       expand_undersized_textures = true;
       xp_mode = false;
@@ -87,6 +84,7 @@
       cm_fs_passthrough = 2;
       cm_enabled = true;
       send_content_type = true;
+      new_render_scheduling = true;
     };
     cursor = {
       no_hardware_cursors = 2;

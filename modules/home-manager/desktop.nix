@@ -33,6 +33,10 @@
     };
     mako = {
       enable = true;
+      settings = {
+        border-radius = config.wayland.windowManager.hyprland.settings.decoration.rounding;
+        default-timeout = 5000;
+      };
     };
   };
   xdg = {

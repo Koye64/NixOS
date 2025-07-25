@@ -11,6 +11,5 @@
     ./nixvim.nix
   ];
   xdg.configFile."nixpkgs/config.nix".source = ../nixos/nixpkgs-config.nix;
-  programs.home-manager.enable = true;
   home.stateVersion = "25.05";
 }

@@ -4,7 +4,7 @@
 }
 
 #waybar {
-  background: @base;
+  background: @crust;
   color: @text;
   margin: 5px 5px;
 }
@@ -12,13 +12,13 @@
 #workspaces {
   border-radius: 0.5rem;
   margin: 5px;
-  background-color: @surface0;
+  background-color: @base;
   margin-left: 1rem;
-  border: 1px solid @surface1;
+  border: 1px solid @surface0;
 }
 
 #workspaces button {
-  color: @overlay2;
+  color: @overlay0;
   border-radius: 0.5rem;
   padding: 0rem 0.5rem;
 }
@@ -47,10 +47,10 @@
 #pulseaudio,
 #custom-lock,
 #idle_inhibitor {
-  background-color: @surface0;
+  background-color: @base;
   padding: 0rem 1rem;
   margin: 5px 0;
-  border: 1px solid @surface1;
+  border: 1px solid @surface0;
 }
 
 #clock {

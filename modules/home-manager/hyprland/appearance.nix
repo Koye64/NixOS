@@ -105,7 +105,7 @@
     hyprpaper = {
       enable = true;
       settings = let
-        wallpaper = builtins.toString ../../../assets/img/nix-wallpaper.png;
+        wallpaper = builtins.toString ../../../assets/nix-wallpaper.png;
       in {
         preload = [ wallpaper ];
         wallpaper = [ ("," + wallpaper) ];

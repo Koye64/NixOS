@@ -33,9 +33,20 @@
     };
     mako = {
       enable = true;
-      settings = {
+      settings = let
+        explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../assets/collide.wav;
+      in {
         border-radius = config.wayland.windowManager.hyprland.settings.decoration.rounding;
         default-timeout = 5000;
+        group-by = "app-name";
+        ignore-timeout = 1;
+        "urgency=normal" = {
+          on-notify = explode;
+        };
+        "urgency=high" = {
+          default-timeout = 0;
+          on-notify = explode;
+        };
       };
     };
   };

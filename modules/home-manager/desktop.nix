@@ -28,7 +28,12 @@
       notify = true;
       tray = "never";
     };
-    mako = { enable = true; };
+    easyeffects = {
+      enable = true;
+    };
+    mako = {
+      enable = true;
+    };
   };
   xdg = {
     enable = true;

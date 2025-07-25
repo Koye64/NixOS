@@ -7,8 +7,14 @@
       "immediate, class:.*"
     ];
     workspace = [
-      "10, monitor:HDMI-A-1"
       "1, monitor:HDMI-A-2"
+      "2, monitor:HDMI-A-2"
+      "3, monitor:HDMI-A-2"
+      "4, monitor:HDMI-A-2"
+      "7, monitor:HDMI-A-1"
+      "8, monitor:HDMI-A-1"
+      "9, monitor:HDMI-A-1"
+      "10, monitor:HDMI-A-1"
     ];
   };
 }

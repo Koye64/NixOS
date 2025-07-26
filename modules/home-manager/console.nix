@@ -66,6 +66,7 @@
         add_newline = false;
       };
     };
+    yazi = { enable = true; };
     zoxide = {
       enable = true;
       options = [

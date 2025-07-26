@@ -10,6 +10,36 @@
       xdgOpenUsePortal = true;
     };
   };
+  systemd.user.services = {
+    hypripc = {
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+      Service = {
+        ExecStart = "${lib.getExe (pkgs.writeShellScriptBin "hypripc.sh" /*bash*/ ''
+          set_primary_monitor() {
+            ${lib.getExe pkgs.xorg.xrandr} --output HDMI-A-2 --primary
+            echo "xrandr: $?; set primary monitor";
+          }
+
+          handle() {
+            case $1 in
+              monitoradded*) set_primary_monitor ;;
+            esac
+          }
+
+          set_primary_monitor
+
+          ${lib.getExe pkgs.socat} -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done
+        '')}";
+      };
+      Unit = {
+        After = [ "graphical-session.target" ];
+        Description = "My script handling Hyprland IPC";
+        PartOf = [ "graphical-session.target" ];
+      };
+    };
+  };
   programs = {
     hyprlock = {
       enable = true;

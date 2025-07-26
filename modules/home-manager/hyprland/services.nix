@@ -24,6 +24,7 @@
     };
   };
   services = {
+    cliphist = { enable = true; };
     hyprpolkitagent.enable = true;
     hypridle = {
       enable = true;

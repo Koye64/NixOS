@@ -5,15 +5,21 @@
   in {
     bind = let
       uwsm = "uwsm app --";
+      fuzzel = "${lib.getExe config.programs.fuzzel.package}";
+      kitty = "${lib.getExe config.programs.kitty.package}";
+      hyprlock = "${lib.getExe config.programs.hyprlock.package}";
+      hyprshot = "${lib.getExe pkgs.hyprshot}";
+      cliphist = "${lib.getExe config.services.cliphist.package}";
+      wl-copy = "${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
     in [
       "${mod}, C, killactive,"
       "${mod}, V, togglefloating,"
       "${mod}, F, fullscreen,"
       "${mod}, Q, exec, uwsm stop"
-      "${mod}, R, exec, ${uwsm} ${lib.getExe config.programs.fuzzel.package}"
-      "${mod}, RETURN, exec, ${uwsm} ${lib.getExe config.programs.kitty.package}"
-      "${mod}, M, exec, ${uwsm} ${lib.getExe config.programs.hyprlock.package}"
-      "${mod} SHIFT, S, exec, ${uwsm} ${lib.getExe pkgs.hyprshot} -m region"
+      "${mod}, R, exec, ${uwsm} ${fuzzel}"
+      "${mod}, RETURN, exec, ${uwsm} ${kitty}"
+      "${mod}, M, exec, ${uwsm} ${hyprlock}"
+      "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region"
 
       "${mod}, H, movefocus, l"
       "${mod}, left, movefocus, l"
@@ -35,6 +41,7 @@
       "${mod} SHIFT, L, movewindow, r"
       "${mod} SHIFT, right, movewindow, r"
 
+      "${mod} SHIFT, V, exec, ${cliphist} list | ${fuzzel} --dmenu | ${cliphist} decode | ${wl-copy}"
       "${mod}, mouse_down, workspace, m-1"
       "${mod}, mouse_up, workspace, m+1"
       "${mod}, 0, workspace, 10"

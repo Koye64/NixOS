@@ -64,15 +64,12 @@
     animations = {
       enabled = true;
       first_launch_animation = false;
-      bezier = [
-        "sharp, 0, 0.75, 0.25, 1"
-        "bump, 0.25, 0, 0, 1"
-      ];
+      bezier = [ "sharp, 0, 0.75, 0.25, 1" ];
       animation = [
         "windows, 1, 2.5, sharp, popin"
         "layers, 1, 2.5, sharp, fade"
-        "layersOut, 1, 2.5, bump, fade"
-        "fade, 1, 2.5, bump"
+        "layersOut, 1, 2.5, sharp, fade"
+        "fade, 1, 2.5, sharp"
         "fadeOut, 1, 2.5, sharp"
         "border, 1, 2, sharp"
         "workspaces, 1, 2.5, sharp, slide"

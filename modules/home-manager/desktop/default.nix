@@ -36,7 +36,7 @@
     mako = {
       enable = true;
       settings = let
-        explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../assets/collide.wav;
+        explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../../assets/collide.wav;
         hyprlandSettings = config.wayland.windowManager.hyprland.settings;
       in {
         border-radius = hyprlandSettings.decoration.rounding;

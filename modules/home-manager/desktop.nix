@@ -35,8 +35,10 @@
       enable = true;
       settings = let
         explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../assets/collide.wav;
+        hyprlandSettings = config.wayland.windowManager.hyprland.settings;
       in {
-        border-radius = config.wayland.windowManager.hyprland.settings.decoration.rounding;
+        border-radius = hyprlandSettings.decoration.rounding;
+        border-size = hyprlandSettings.general.border_size;
         default-timeout = 5000;
         group-by = "app-name";
         ignore-timeout = 1;

@@ -1,5 +1,15 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 {
+  xdg = {
+    enable = true;
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+    };
+  };
   programs = {
     hyprlock = {
       enable = true;

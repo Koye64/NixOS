@@ -1,5 +1,14 @@
 { config, pkgs, lib, ... }:
 {
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+    };
+  };
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [

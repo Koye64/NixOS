@@ -35,6 +35,9 @@
         flip_x = false;
         flip_y = false;
       };
+      tablet = {
+        output = "HDMI-A-2";
+      };
     };
   };
 }

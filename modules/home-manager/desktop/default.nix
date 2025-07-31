@@ -33,6 +33,7 @@
     easyeffects = {
       enable = true;
     };
+    gnome-keyring = { enable = true; };
     mako = {
       enable = true;
       settings = let

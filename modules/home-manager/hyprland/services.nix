@@ -59,7 +59,7 @@
     hypridle = {
       enable = true;
       settings = let
-        hyprlock = "${lib.getExe pkgs.uwsm} app -- ${lib.getExe config.programs.hyprlock.package}";
+        hyprlock = "${lib.getExe config.programs.hyprlock.package}";
       in {
         general = {
           lock_cmd = hyprlock;

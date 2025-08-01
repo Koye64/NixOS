@@ -7,7 +7,6 @@
       uwsm = "uwsm app --";
       fuzzel = "${lib.getExe config.programs.fuzzel.package}";
       kitty = "${lib.getExe config.programs.kitty.package}";
-      hyprlock = "${lib.getExe config.programs.hyprlock.package}";
       hyprshot = "${lib.getExe pkgs.hyprshot}";
       cliphist = "${lib.getExe config.services.cliphist.package}";
       wl-copy = "${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
@@ -18,7 +17,7 @@
       "${mod}, Q, exec, uwsm stop"
       "${mod}, R, exec, ${uwsm} ${fuzzel}"
       "${mod}, RETURN, exec, ${uwsm} ${kitty}"
-      "${mod}, M, exec, ${uwsm} ${hyprlock}"
+      "${mod}, M, exec, loginctl lock-session"
       "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region"
 
       "${mod}, H, movefocus, l"

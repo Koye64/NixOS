@@ -59,15 +59,16 @@
     hypridle = {
       enable = true;
       settings = let
-        hyprlock = "uwsm app -- ${lib.getExe config.programs.hyprlock.package}";
+        hyprlock = "${lib.getExe pkgs.uwsm} app -- ${lib.getExe config.programs.hyprlock.package}";
       in {
         general = {
           lock_cmd = hyprlock;
+          before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
         };
         listener = [
           { timeout = 300;
-            on-timeout = hyprlock;
+            on-timeout = "loginctl lock-session";
           }
           { timeout = 600;
             on-timeout = "systemctl suspend";

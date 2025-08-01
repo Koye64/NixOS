@@ -86,24 +86,6 @@
       send_content_type = true;
       new_render_scheduling = true;
     };
-    cursor = {
-      no_hardware_cursors = 2;
-      no_break_fs_vrr = 2;
-      min_refresh_rate = 60;
-      hotspot_padding = 1;
-      inactive_timeout = 0;
-      no_warps = false;
-      persistent_warps = false;
-      warp_on_change_workspace = 0;
-      warp_on_toggle_special = 0;
-      default_monitor = "HDMI-A-2";
-      zoom_factor = 1;
-      zoom_rigid = false;
-      enable_hyprcursor = true;
-      hide_on_key_press = false;
-      hide_on_touch = true;
-      use_cpu_buffer = 2;
-    };
     ecosystem = {
       enforce_permissions = false;
     };

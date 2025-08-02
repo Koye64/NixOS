@@ -27,7 +27,11 @@
         ".ssh"
         ".local/share/keyrings"
         ".local/share/Steam"
+        ".local/share/zoxide"
         ".mozilla/firefox"
+      ];
+      files = [
+        ".zsh_history"
       ];
     };
   };

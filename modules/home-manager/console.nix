@@ -20,7 +20,13 @@
       ];
     };
     btop = { enable = true; };
-    cava = { enable = true; };
+    cava = {
+      enable = true;
+      settings = {
+        general.framerate = 144;
+        smoothing.noise_reduction = 12;
+      };
+    };
     eza = {
       enable = true;
       enableFishIntegration = true;

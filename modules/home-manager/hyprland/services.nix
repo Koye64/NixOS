@@ -24,6 +24,7 @@
 
           handle() {
             case $1 in
+              focusedmon*) set_primary_monitor ;;
               monitoradded*) set_primary_monitor ;;
             esac
           }

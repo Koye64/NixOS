@@ -24,6 +24,9 @@
       };
     };
     vim = { enable = true; };
+    zsh = {
+      enable = true;
+    };
     zoxide = {
       enable = true;
       flags = [
@@ -31,5 +34,5 @@
       ];
     };
   };
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.zsh;
 }

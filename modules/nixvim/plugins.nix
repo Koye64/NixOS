@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nixvim.plugins = {
     aerial = { enable = true; };
@@ -66,7 +66,10 @@
     toggleterm = { enable = true; };
     treesitter = { enable = true; };
     treesj = { enable = true; };
-    vimtex = { enable = true; };
+    vimtex = {
+      enable = true;
+      texlivePackage = pkgs.texlive.combined.scheme-full;
+    };
     web-devicons = { enable = true; };
     which-key = {
       enable = true;

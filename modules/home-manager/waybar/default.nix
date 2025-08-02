@@ -52,7 +52,7 @@
         };
         "custom/lock" = {
           tooltip = false;
-          on-click = "${config.services.hypridle.settings.general.lock_cmd}";
+          on-click = "loginctl lock-session";
           format = "";
         };
         idle_inhibitor = {

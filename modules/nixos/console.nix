@@ -19,7 +19,7 @@
     starship = {
       enable = true;
       transientPrompt = { enable = true; };
-      settings = import ../starship.nix;
+      settings = import ../shared/starship.nix;
     };
     vim = { enable = true; };
     zsh = {

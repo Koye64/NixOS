@@ -68,7 +68,7 @@
     starship = {
       enable = true;
       enableTransience = true;
-      settings = import ../starship.nix;
+      settings = import ../shared/starship.nix;
     };
     yazi = { enable = true; };
     zsh = {

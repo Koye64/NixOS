@@ -8,6 +8,7 @@
     lg = "${lib.getExe config.programs.lazygit.package}";
     cat = "${lib.getExe config.programs.bat.package}";
     man = "${lib.getExe pkgs.bat-extras.batman}";
+    c = "clear";
   };
   programs = {
     bat = {

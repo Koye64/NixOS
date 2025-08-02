@@ -19,13 +19,23 @@
     starship = {
       enable = true;
       transientPrompt = { enable = true; };
-      settings = {
-        add_newline = false;
-      };
+      settings = import ../starship.nix;
     };
     vim = { enable = true; };
     zsh = {
       enable = true;
+      autosuggestions = {
+        enable = true;
+        strategy = [
+          "history"
+          "completion"
+          "match_prev_cmd"
+        ];
+      };
+      enableBashCompletion = true;
+      enableLsColors = true;
+      vteIntegration = true;
+      syntaxHighlighting.enable = true;
     };
     zoxide = {
       enable = true;

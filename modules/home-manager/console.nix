@@ -68,13 +68,30 @@
     starship = {
       enable = true;
       enableTransience = true;
-      settings = {
-        add_newline = false;
-      };
+      settings = import ../starship.nix;
     };
     yazi = { enable = true; };
     zsh = {
       enable = true;
+      enableVteIntegration = true;
+      autocd = true;
+      autosuggestion = {
+        enable = true;
+        strategy = [
+          "history"
+          "completion"
+          "match_prev_cmd"
+        ];
+      };
+      completionInit = ''
+        zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate _prefix
+        zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+        zstyle ':completion:*' max-errors 3
+        zstyle :compinstall filename '/home/koye/compinstall'
+        autoload -Uz compinit
+        compinit
+      '';
+      syntaxHighlighting.enable = true;
     };
     zoxide = {
       enable = true;

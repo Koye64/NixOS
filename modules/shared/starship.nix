@@ -21,6 +21,7 @@
     "$python"
     "[](fg:green bg:sapphire)"
     "$conda"
+    "$nix_shell"
     "[](fg:sapphire bg:lavender)"
     "$time"
     "[ ](fg:lavender)"
@@ -90,7 +91,7 @@
   rust = {
     symbol = "";
     style = "bg:green";
-    format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)";
+    format = "[[ $symbol($version) ](fg:crust bg:green)]($style)";
   };
   golang = {
     symbol = "";
@@ -133,9 +134,16 @@
     format = "[$symbol$environment ]($style)";
     ignore_base = false;
   };
+  nix_shell = {
+    symbol = " 󱄅 ";
+    style = "fg:crust bg:sapphire";
+    pure_msg = "\\(pure\\) ";
+    impure_msg = "\\(impure\\) ";
+    format = "[$symbol$name $state]($style)";
+  };
   time = {
     disabled = true;
-    time_format = "%R";
+    time_format = "%-I:%M %p";
     style = "bg:lavender";
     format = "[[  $time ](fg:crust bg:lavender)]($style)";
   };

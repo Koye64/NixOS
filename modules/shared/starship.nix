@@ -147,7 +147,7 @@
     format = " in $duration ";
     style = "bg:lavender";
     disabled = false;
-    show_notifications = true;
+    show_notifications = false;
     min_time_to_notify = 45000;
   };
   palettes = {

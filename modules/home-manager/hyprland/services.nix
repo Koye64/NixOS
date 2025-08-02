@@ -63,7 +63,7 @@
         hyprlock = "${lib.getExe config.programs.hyprlock.package}";
       in {
         general = {
-          lock_cmd = hyprlock;
+          lock_cmd = "pidof ${hyprlock} || ${hyprlock}";
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on";
         };

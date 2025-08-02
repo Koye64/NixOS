@@ -22,6 +22,7 @@
         border.radius = hyprlandSettings.decoration.rounding;
       };
     };
+    zathura = { enable = true; };
   };
   services = {
     udiskie = {

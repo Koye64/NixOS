@@ -10,6 +10,7 @@
       confirm = true;
       cursorline = true;
       expandtab = true;
+      fillchars.eob = " ";
       list = true;
       mouse = "a";
       number = true;

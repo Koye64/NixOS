@@ -3,6 +3,7 @@
     "[](red)"
     "$os"
     "$username"
+    "$hostname"
     "[](bg:peach fg:red)"
     "$directory"
     "[](bg:yellow fg:peach)"
@@ -45,8 +46,14 @@
   username = {
     show_always = true;
     style_user = "bg:red fg:crust";
-    style_root = "bg:red fg:crust";
+    style_root = "bold bg:red fg:crust";
     format = "[ $user]($style)";
+  };
+  hostname = {
+    ssh_only = false;
+    ssh_symbol = " ";
+    style = "bg:red fg:crust";
+    format = "[@$hostname$ssh_symbol]($style)";
   };
   directory = {
     style = "bg:peach fg:crust";

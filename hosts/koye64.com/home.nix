@@ -6,4 +6,6 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nixvim.nix
   ];
+  xdg.configFile."nixpkgs/config.nix".source = ../../modules/nixos/nixpkgs-config.nix;
+  home.stateVersion = "25.05";
 }

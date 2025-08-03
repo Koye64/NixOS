@@ -31,11 +31,11 @@
           { home-manager.users.koye = ./hosts/headroom/home.nix; }
         ];
       };
-      "koye64.com" = nixpkgs.lib.nixosSystem {
+      koye64 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/koye64.com/configuration.nix
-          { home-manager.users.koye = ./hosts/koye64.com/home.nix; }
+          ./hosts/koye64/configuration.nix
+          { home-manager.users.koye = ./hosts/koye64/home.nix; }
         ];
       };
     };

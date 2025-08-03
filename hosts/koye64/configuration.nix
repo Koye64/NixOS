@@ -23,7 +23,7 @@
 
   services.openssh.enable = true;
 
-  networking.hostName = "koye64.com";
+  networking.hostName = "koye64";
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl

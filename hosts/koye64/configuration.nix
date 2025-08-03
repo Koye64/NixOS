@@ -32,6 +32,7 @@
 
   users.mutableUsers = false;
   users.users.koye = {
+    initialHashedPassword = "$6$lYhDMNUaETVWJ4qK$49oxUqlabdpkf7AcGJMQmk2gTDhm3/xBcqry6bBMxa1HdKLWsaTlLUe5omlNb7nxh5W4zLJculNq3xxZGNB7b/";
     isNormalUser = true;
     uid = 1000;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.

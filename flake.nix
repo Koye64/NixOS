@@ -15,14 +15,6 @@
 
   outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      qemu = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./modules/nixos
-          ./hosts/qemu/configuration.nix
-          { home-manager.users.koye = ./hosts/qemu/home.nix; }
-        ];
-      };
       headroom = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

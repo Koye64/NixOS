@@ -2,7 +2,9 @@
 {
   programs.texlive = {
     enable = true;
-    packageSet = pkgs.texlive;
   };
-  programs.nixvim.plugins.vimtex.package = config.programs.texlive.package;
+  programs.nixvim.plugins.vimtex = {
+    enable = true;
+    texlivePackage = pkgs.texlive.combined.scheme-full;
+  };
 }

@@ -53,9 +53,6 @@
         color_align.mode = "horizontal";
       };
     };
-    kitty = {
-      enable = true;
-    };
     lazygit = {
       enable = true;
       settings = {

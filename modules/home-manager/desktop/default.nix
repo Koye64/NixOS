@@ -2,6 +2,9 @@
 {
   imports = [ ./programs.nix ];
 
+  home.shellAliases = {
+    ssh = "${lib.getExe' config.programs.kitty.package "kitten"} ssh";
+  };
   programs = {
     firefox = {
       enable = true;
@@ -20,6 +23,19 @@
         };
         border.width = hyprlandSettings.general.border_size;
         border.radius = hyprlandSettings.decoration.rounding;
+      };
+    };
+    kitty = {
+      enable = true;
+      enableGitIntegration = true;
+      settings = {
+        cursor_shape = "block";
+        cursor_shape_unfocused = "hollow";
+        cursor_blink_interval = 0;
+        cursor_trail = 16;
+        scrollback_lines = 5000;
+        repaint_delay = 5;
+        sync_to_monitor = "no";
       };
     };
     zathura = { enable = true; };

@@ -9,5 +9,6 @@
     ./impermanence.nix
     ./nix.nix
     ./home-manager.nix
+    ./vr.nix
   ];
 }

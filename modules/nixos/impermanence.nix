@@ -24,11 +24,12 @@
         "Documents"
         "Videos"
         "NixOS"
-        ".ssh"
+        ".config/wivrn"
         ".local/share/keyrings"
         ".local/share/Steam"
         ".local/share/zoxide"
         ".mozilla/firefox"
+        ".ssh"
       ];
       files = [
         ".zsh_history"

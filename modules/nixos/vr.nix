@@ -3,28 +3,22 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
   ];
+  networking.networkmanager.settings = {
+    connection-wifi = {
+      match-device = "type:wifi";
+      "ipv4.route-metric" = 100;
+      "ipv6.route-metric" = 100;
+    };
+    connection-ethernet = {
+      match-device = "type:ethernet";
+      "ipv4.route-metric" = 200;
+      "ipv6.route-metric" = 200;
+    };
+  };
   services.wivrn = {
     enable = true;
     openFirewall = true;
     defaultRuntime = true;
     autoStart = true;
-    config = {
-      enable = true;
-      json = {
-        scale = 1.0;
-        bitrate = 100000000;
-        encoders = [
-          {
-            encoder = "vaapi";
-            codec = "h265";
-            width = 1.0;
-            height = 1.0;
-            offset_x = 0.0;
-            offset_y = 0.0;
-          }
-        ];
-        application = [ pkgs.wlx-overlay-s ];
-      };
-    };
   };
 }

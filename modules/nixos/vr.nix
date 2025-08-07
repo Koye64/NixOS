@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+  ];
   services.wivrn = {
     enable = true;
     openFirewall = true;
@@ -9,11 +12,11 @@
       enable = true;
       json = {
         scale = 1.0;
-        bitrate = 200000000;
+        bitrate = 100000000;
         encoders = [
           {
-            encoder = "nvenc";
-            codec = "h264";
+            encoder = "vaapi";
+            codec = "h265";
             width = 1.0;
             height = 1.0;
             offset_x = 0.0;

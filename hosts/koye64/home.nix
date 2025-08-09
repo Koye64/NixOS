@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home-manager/catppuccin.nix
     ../../modules/home-manager/console.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nixvim.nix

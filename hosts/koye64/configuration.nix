@@ -11,6 +11,7 @@
     ../../modules/nixos/console.nix
     ../../modules/nixos/home-manager.nix
     ../../modules/nixos/nix.nix
+    ../../modules/nixos/server.nix
     ./hardware-configuration.nix
     ./disk-config.nix
     ./impermanence.nix

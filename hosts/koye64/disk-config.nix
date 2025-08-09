@@ -42,6 +42,10 @@
                     mountOptions = [ "compress=zstd" ];
                     mountpoint = "/srv/sync";
                   };
+                  "/@srv_www_koye64.com" = {
+                    mountOptions = [ "compress=zstd" ];
+                    mountpoint = "/srv/www/koye64.com";
+                  };
                   "/@nix" = {
                     mountOptions = [
                       "compress=zstd"

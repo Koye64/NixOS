@@ -63,6 +63,15 @@
       enable = true;
       flake = "/home/koye/NixOS";
     };
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        "koye64" = {
+          hostname = "5.78.71.231";
+          user = "koye";
+        };
+      };
+    };
     starship = {
       enable = true;
       enableTransience = true;

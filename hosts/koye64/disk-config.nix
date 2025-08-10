@@ -39,11 +39,17 @@
                     mountpoint = "/home";
                   };
                   "/@srv_sync" = {
-                    mountOptions = [ "compress=zstd" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "X-mount.owner=koye"
+                    ];
                     mountpoint = "/srv/sync";
                   };
                   "/@srv_www_koye64.com" = {
-                    mountOptions = [ "compress=zstd" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "X-mount.owner=koye"
+                    ];
                     mountpoint = "/srv/www/koye64.com";
                   };
                   "/@nix" = {

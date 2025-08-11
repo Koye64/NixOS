@@ -5,10 +5,11 @@
     ./console.nix
     ./desktop.nix
     ./greeter.nix
+    ./home-manager.nix
     ./hyprland.nix
     ./impermanence.nix
     ./nix.nix
-    ./home-manager.nix
+    ./syncthing.nix
     ./vr.nix
   ];
 }

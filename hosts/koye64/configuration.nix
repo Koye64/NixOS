@@ -15,7 +15,7 @@
     ./disk-config.nix
     ./hardware-configuration.nix
     ./impermanence.nix
-    ./server.nix
+    ./webserver.nix
   ];
 
   boot.loader.grub = {

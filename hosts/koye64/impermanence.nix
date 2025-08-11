@@ -8,6 +8,7 @@
     directories = [
       "/var/log"
       "/var/lib/nixos"
+      "/var/lib/syncthing"
       "/var/lib/systemd/coredump"
     ];
     files = [

@@ -38,12 +38,12 @@
                     mountOptions = [ "compress=zstd" ];
                     mountpoint = "/home";
                   };
-                  "/@srv_sync" = {
+                  "/@srv_syncthing" = {
                     mountOptions = [
                       "compress=zstd"
                       "X-mount.owner=koye"
                     ];
-                    mountpoint = "/srv/sync";
+                    mountpoint = "/srv/syncthing";
                   };
                   "/@srv_www_koye64.com" = {
                     mountOptions = [

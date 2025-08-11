@@ -4,5 +4,6 @@
     enable = true;
     openDefaultPorts = false;
     extraFlags = [ "--no-default-folder" ];
+    dataDir = "/srv/syncthing";
   };
 }

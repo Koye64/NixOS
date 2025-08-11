@@ -9,7 +9,6 @@
     ./hyprland.nix
     ./impermanence.nix
     ./nix.nix
-    ./syncthing.nix
     ./vr.nix
   ];
 }

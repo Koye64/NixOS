@@ -11,10 +11,10 @@
     ../../modules/nixos/console.nix
     ../../modules/nixos/home-manager.nix
     ../../modules/nixos/nix.nix
-    ../../modules/nixos/syncthing.nix
     ./disk-config.nix
     ./hardware-configuration.nix
     ./impermanence.nix
+    ./syncthing.nix
     ./webserver.nix
   ];
 

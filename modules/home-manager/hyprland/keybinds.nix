@@ -18,7 +18,7 @@
       "${mod}, R, exec, ${uwsm} ${fuzzel}"
       "${mod}, RETURN, exec, ${uwsm} ${kitty}"
       "${mod}, M, exec, loginctl lock-session"
-      "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region"
+      "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region -o ~/Pictures/Screenshots"
 
       "${mod}, H, movefocus, l"
       "${mod}, left, movefocus, l"

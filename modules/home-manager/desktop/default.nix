@@ -38,6 +38,9 @@
         sync_to_monitor = "no";
       };
     };
+    obsidian = {
+      enable = true;
+    };
     zathura = { enable = true; };
   };
   services = {

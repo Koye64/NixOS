@@ -2,7 +2,6 @@
 {
   imports = [ inputs.impermanence.nixosModules.impermanence ];
 
-  programs.fuse.userAllowOther = true;
   environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
@@ -16,26 +15,5 @@
     files = [
       "/etc/machine-id"
     ];
-    users.koye = {
-      directories = [
-        "Downloads"
-        "Music"
-        "Pictures"
-        "Documents"
-        "Videos"
-        "NixOS"
-        ".config/wivrn"
-        ".local/share/keyrings"
-        ".local/share/Steam"
-        ".local/share/zoxide"
-        ".local/state/syncthing"
-        ".mozilla/firefox"
-        ".mobile_sync"
-        ".ssh"
-      ];
-      files = [
-        ".zsh_history"
-      ];
-    };
   };
 }

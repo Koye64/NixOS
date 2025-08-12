@@ -39,6 +39,12 @@
       options = [ "subvol=@swap" ];
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-label/NixOS";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/Boot";
       fsType = "vfat";

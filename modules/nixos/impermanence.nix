@@ -30,6 +30,7 @@
         ".local/share/zoxide"
         ".local/state/syncthing"
         ".mozilla/firefox"
+        ".mobile_sync"
         ".ssh"
       ];
       files = [

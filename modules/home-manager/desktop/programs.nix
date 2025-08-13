@@ -4,6 +4,7 @@
     aseprite
     discord
     krita
+    obsidian
     seahorse
     vlc
   ];

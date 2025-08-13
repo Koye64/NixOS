@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    wl-clipboard
+    wtype
+  ];
   wayland.windowManager.hyprland.settings = let
     mod = "SUPER";
   in {
@@ -10,6 +14,7 @@
       hyprshot = "${lib.getExe pkgs.hyprshot}";
       cliphist = "${lib.getExe config.services.cliphist.package}";
       wl-copy = "${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
+      bemoji = "${lib.getExe pkgs.bemoji}";
     in [
       "${mod}, C, killactive,"
       "${mod}, V, togglefloating,"
@@ -19,6 +24,7 @@
       "${mod}, RETURN, exec, ${uwsm} ${kitty}"
       "${mod}, M, exec, loginctl lock-session"
       "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region -o ~/Pictures/Screenshots"
+      "${mod}, PERIOD, exec, ${bemoji}"
 
       "${mod}, H, movefocus, l"
       "${mod}, left, movefocus, l"

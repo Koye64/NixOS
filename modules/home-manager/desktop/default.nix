@@ -44,7 +44,7 @@
       settings = {
         fork = false;
         font = {
-          normal = [];
+          normal = "JetBrainsMono Nerd Font";
           size = 11;
         };
       };

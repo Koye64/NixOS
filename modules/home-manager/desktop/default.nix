@@ -4,6 +4,7 @@
 
   home.shellAliases = {
     ssh = "${lib.getExe' config.programs.kitty.package "kitten"} ssh";
+    nvim = "${lib.getExe config.programs.neovide.package}";
   };
   programs = {
     firefox = {
@@ -36,6 +37,16 @@
         scrollback_lines = 5000;
         repaint_delay = 5;
         sync_to_monitor = "no";
+      };
+    };
+    neovide = {
+      enable = true;
+      settings = {
+        fork = false;
+        font = {
+          normal = [];
+          size = 11;
+        };
       };
     };
     zathura = { enable = true; };

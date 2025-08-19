@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    audacity
     aseprite
     discord
     keepassxc

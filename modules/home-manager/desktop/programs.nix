@@ -5,6 +5,7 @@
     discord
     keepassxc
     krita
+    mpc
     obsidian
     seahorse
     vlc

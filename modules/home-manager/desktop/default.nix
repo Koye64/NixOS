@@ -39,6 +39,9 @@
         sync_to_monitor = "no";
       };
     };
+    ncmpcpp = {
+      enable = true;
+    };
     neovide = {
       enable = true;
       settings = {
@@ -81,6 +84,18 @@
           on-notify = explode;
         };
       };
+    };
+    mpd-discord-rpc = {
+      enable = true;
+    };
+    mpd = {
+      enable = true;
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "Pipewire Output"
+        }
+      '';
     };
   };
   xdg = {

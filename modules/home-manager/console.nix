@@ -77,6 +77,7 @@
       enableTransience = true;
       settings = import ../shared/starship.nix;
     };
+    tealdeer = { enable = true; };
     yazi = { enable = true; };
     zsh = {
       enable = true;

@@ -2,8 +2,8 @@
 {
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      "HDMI-A-1, 1440x900@74.98, 0x0, 1"
-      "HDMI-A-2, 1920x1080@144, 1440x0, 1"
+      "HDMI-A-1, 1440x900@74.98, 1920x180, 1"
+      "HDMI-A-2, 1920x1080@144, 0x0, 1"
     ];
     general = {
       border_size = 2;

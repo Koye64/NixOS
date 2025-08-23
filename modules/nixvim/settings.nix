@@ -6,11 +6,13 @@
       providers.wl-copy.enable = true;
     };
     opts = {
+      colorcolumn = "80";
       conceallevel = 2;
       confirm = true;
       cursorline = true;
       expandtab = true;
       fillchars.eob = " ";
+      fo = "crqwanvblj";
       list = true;
       mouse = "a";
       number = true;

@@ -40,7 +40,7 @@
           };
           format = "{icon} {capacity}%";
           format-charging = "󰂄 ({capacity}%)";
-          format-plugged = "󰂄 ({capacity}%)";
+          format-full = "{icon}";
           format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         };
         pulseaudio = {

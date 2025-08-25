@@ -57,5 +57,9 @@
         output = "HDMI-A-2";
       };
     };
+    device = {
+      name = "syna32ea:00-06cb:ce17-touchpad";
+      accel_profile = "adaptive";
+    };
   };
 }

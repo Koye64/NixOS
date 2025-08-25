@@ -8,6 +8,7 @@
       "rounding 0, class:steam"
     ];
     workspace = [
+      "1, monitor:eDP-1"
       "1, monitor:HDMI-A-2"
       "2, monitor:HDMI-A-2"
       "3, monitor:HDMI-A-2"

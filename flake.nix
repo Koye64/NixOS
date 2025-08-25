@@ -23,6 +23,14 @@
           { home-manager.users.koye = ./hosts/headroom/home.nix; }
         ];
       };
+      puppy = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules/nixos
+          ./hosts/puppy/configuration.nix
+          { home-manager.users.koye = ./hosts/puppy/home.nix; }
+        ];
+      };
       koye64 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

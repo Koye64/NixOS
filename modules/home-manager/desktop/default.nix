@@ -17,6 +17,7 @@
       in {
         main = {
           use-bold = true;
+          dpi-aware = "no";
           launch-prefix = "uwsm app --";
           placeholder = "Launch...";
           prompt = ''"❯ "'';

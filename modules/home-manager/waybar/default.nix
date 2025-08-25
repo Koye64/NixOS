@@ -30,6 +30,7 @@
         };
         backlight = {
           format = "{icon}";
+          tooltip-format = "Backlight {percent}%";
           format-icons = ["" "" "" "" "" "" "" "" ""];
         };
         battery = {

@@ -37,9 +37,9 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon}";
-          format-charging = "󰂄";
-          format-plugged = "󰂄";
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 ({capacity}%)";
+          format-plugged = "󰂄 ({capacity}%)";
           format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         };
         pulseaudio = {

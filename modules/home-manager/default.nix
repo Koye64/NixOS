@@ -3,9 +3,10 @@
   imports = [
     ./hyprland
     ./waybar
-    ./desktop
     ./catppuccin.nix
     ./console.nix
+    ./desktop.nix
+    ./extraPrograms.nix
     ./fonts.nix
     ./git.nix
     ./graphicalToolkit.nix

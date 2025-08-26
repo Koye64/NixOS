@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  imports = [ ./programs.nix ];
-
   home.shellAliases = {
     ssh = "${lib.getExe' config.programs.kitty.package "kitten"} ssh";
     nvim = "${lib.getExe config.programs.neovide.package}";

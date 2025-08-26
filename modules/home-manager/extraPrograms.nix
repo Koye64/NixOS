@@ -10,5 +10,6 @@
     obsidian
     seahorse
     vlc
+    yt-dlp
   ];
 }

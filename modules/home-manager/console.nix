@@ -1,5 +1,8 @@
 { inputs, pkgs, lib, config, ... }:
 {
+  home.packages = with pkgs; [
+    unzip
+  ];
   home.sessionVariables = {
     PAGER = "${lib.getExe config.programs.bat.package}";
     fish_greeting = "";

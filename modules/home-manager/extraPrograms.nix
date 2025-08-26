@@ -8,6 +8,7 @@
     krita
     mpc
     obsidian
+    puddletag
     seahorse
     vlc
     yt-dlp

@@ -85,7 +85,7 @@
       disable_splash_rendering = true;
       force_default_wallpaper = 0;
       vfr = true;
-      vrr = 2;
+      vrr = 0;
       background_color = "$crust";
     };
     windowrule = [

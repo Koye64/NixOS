@@ -84,7 +84,7 @@
       cm_fs_passthrough = 2;
       cm_enabled = true;
       send_content_type = true;
-      new_render_scheduling = true;
+      new_render_scheduling = false;
     };
     ecosystem = {
       enforce_permissions = false;

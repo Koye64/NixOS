@@ -1,6 +1,7 @@
 { inputs, pkgs, lib, config, ... }:
 {
   home.packages = with pkgs; [
+    zip
     unzip
   ];
   home.sessionVariables = {

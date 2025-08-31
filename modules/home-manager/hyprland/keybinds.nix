@@ -11,7 +11,7 @@
       uwsm = "uwsm app --";
       fuzzel = "${lib.getExe config.programs.fuzzel.package}";
       kitty = "${lib.getExe config.programs.kitty.package}";
-      hyprshot = "${lib.getExe pkgs.hyprshot}";
+      hyprshot = "${lib.getExe pkgs.hyprshot} -m region -o ~/Pictures/Screenshots";
       cliphist = "${lib.getExe config.services.cliphist.package}";
       wl-copy = "${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
       bemoji = "${lib.getExe pkgs.bemoji}";
@@ -23,7 +23,7 @@
       "${mod}, R, exec, ${uwsm} ${fuzzel}"
       "${mod}, RETURN, exec, ${uwsm} ${kitty}"
       "${mod}, M, exec, loginctl lock-session"
-      "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot} -m region -o ~/Pictures/Screenshots"
+      "${mod} SHIFT, S, exec, ${uwsm} ${hyprshot}"
       "${mod}, PERIOD, exec, ${bemoji}"
 
       "${mod}, H, movefocus, l"

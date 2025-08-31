@@ -9,6 +9,7 @@
     krita
     mpc
     obsidian
+    prismlauncher
     puddletag
     seahorse
     vlc

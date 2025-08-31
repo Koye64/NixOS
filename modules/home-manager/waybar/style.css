@@ -23,16 +23,18 @@
   padding: 0rem 0.5rem;
 }
 
+#workspaces button.focused,
 #workspaces button.active {
   color: @blue;
-  border-radius: 0.5rem;
   font-weight: bolder;
+}
+#workspaces button.urgent {
+  color: @red;
 }
 
 #workspaces button:hover {
   color: @mauve;
   background-color: transparent;
-  border-radius: 0.5rem;
 }
 
 #window {

@@ -8,7 +8,7 @@
       bar = {
         layer = "top";
         position = "top";
-        modules-left = [ "hyprland/workspaces" "wlr/workspaces" "hyprland/window" "sway/window" ];
+        modules-left = [ "hyprland/workspaces" "sway/workspaces" "hyprland/window" "sway/window" ];
         modules-center = [ "mpris" ];
         modules-right = [ "pulseaudio" "backlight" "battery" "clock" "tray" "custom/lock" "idle_inhibitor" ];
         "hyprland/workspaces" = {
@@ -17,6 +17,9 @@
         };
         "hyprland/window" = {
           separate-outputs = true;
+        };
+        "sway/window" = {
+          all-outputs = true;
         };
         mpris = { };
         tray = {

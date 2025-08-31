@@ -1,2 +1,6 @@
-{}:
-{}
+{ ... }:
+{
+  wayland.windowManager.sway.config = {
+
+  };
+}

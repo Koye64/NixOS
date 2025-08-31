@@ -3,17 +3,20 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
-    ./hyprland/appearance.nix
-    ./hyprland/input.nix
+    ./sway/appearance.nix
+    ./sway/input.nix
+    ./sway/settings.nix
     ./graphicalToolkit.nix
     ./catppuccin.nix
   ];
   home.stateVersion = "25.05";
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.settings.exec-once = let 
+  wayland.windowManager.sway.enable = true;
+  wayland.windowManager.sway.config.startup = let 
     wlgreet = lib.getExe pkgs.greetd.wlgreet;
-    hyprland = lib.getExe config.wayland.windowManager.hyprland.package;
+    session = lib.getExe config.wayland.windowManager.sway.package;
   in [
-    "${wlgreet} --command 'uwsm start ${hyprland}'; uwsm stop"
+    { command = "${wlgreet} --command 'uwsm start -- ${session}'; uwsm stop";
+      always = false;
+    }
   ];
 }

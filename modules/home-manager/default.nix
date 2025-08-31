@@ -1,7 +1,8 @@
 { ... }:
 {
   imports = [
-    ./hyprland
+    # ./hyprland
+    ./sway
     ./waybar
     ./catppuccin.nix
     ./console.nix

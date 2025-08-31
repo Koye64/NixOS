@@ -2,7 +2,6 @@
 {
   home.shellAliases = {
     ssh = "${lib.getExe' config.programs.kitty.package "kitten"} ssh";
-    nvim = "${lib.getExe config.programs.neovide.package}";
   };
   programs = {
     firefox = {
@@ -10,9 +9,7 @@
     };
     fuzzel = {
       enable = true;
-      settings = let
-        hyprlandSettings = config.wayland.windowManager.hyprland.settings;
-      in {
+      settings = {
         main = {
           use-bold = true;
           dpi-aware = "no";
@@ -21,8 +18,19 @@
           prompt = ''"❯ "'';
           terminal = "${lib.getExe config.programs.kitty.package}";
         };
-        border.width = hyprlandSettings.general.border_size;
-        border.radius = hyprlandSettings.decoration.rounding;
+        border.width = 2;
+        border.radius = 0;
+      };
+    };
+    hyprlock = {
+      enable = true;
+      settings = {
+        background = [
+          { path = "screenshot";
+            blur_passes = 3;
+            blur_size = 8;
+          }
+        ];
       };
     };
     kitty = {
@@ -67,11 +75,10 @@
     mako = {
       enable = true;
       settings = let
-        explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../../assets/collide.wav;
-        hyprlandSettings = config.wayland.windowManager.hyprland.settings;
+        explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../assets/collide.wav;
       in {
-        border-radius = hyprlandSettings.decoration.rounding;
-        border-size = hyprlandSettings.general.border_size;
+        border-radius = 0;
+        border-size = 2;
         default-timeout = 5000;
         group-by = "app-name";
         ignore-timeout = 1;

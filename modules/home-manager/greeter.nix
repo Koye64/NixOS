@@ -12,10 +12,10 @@
   home.stateVersion = "25.05";
   wayland.windowManager.sway.enable = true;
   wayland.windowManager.sway.config.startup = let 
-    wlgreet = lib.getExe pkgs.greetd.wlgreet;
+    wlgreet = lib.getExe pkgs.wlgreet;
     session = lib.getExe config.wayland.windowManager.sway.package;
   in [
-    { command = "${wlgreet} --command 'uwsm start -- ${session}'; uwsm stop";
+    { command = "${wlgreet} --command 'uwsm start -- sh -c \"WLR_DRM_NO_ATOMIC=1 ${session}\"'; uwsm stop";
       always = false;
     }
   ];

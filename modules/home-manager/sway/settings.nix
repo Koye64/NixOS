@@ -26,7 +26,7 @@
     };
     window.commands = [
       {
-        command = "allow_tearing";
+        command = "allow_tearing yes";
         criteria = {
           class = ".*";
         };

@@ -42,22 +42,24 @@
     nvim-surround = { enable = true; };
     nvim-tree = {
       enable = true;
-      disableNetrw = true;
-      hijackCursor = true;
-      hijackNetrw = true;
-      hijackUnnamedBufferWhenOpening = true;
       openOnSetup = true;
       openOnSetupFile = true;
-      syncRootWithCwd = true;
-      actions.changeDir.enable = true;
-      modified = { enable = true; };
-      tab.sync = {
-        close = true;
-        open = true;
-      };
-      updateFocusedFile = {
-        enable = true;
-        updateRoot = true;
+      settings = {
+        disable_netrw = true;
+        hijack_cursor = true;
+        hijack_netrw = true;
+        hijack_unnamed_buffer_when_opening = true;
+        sync_root_with_cwd = true;
+        actions.change_dir.enable = true;
+        modified = { enable = true; };
+        tab.sync = {
+          close = true;
+          open = true;
+        };
+        update_focused_file = {
+          enable = true;
+          update_root = true;
+        };
       };
     };
     render-markdown = { enable = true; };

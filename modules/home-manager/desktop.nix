@@ -77,6 +77,7 @@
       settings = let
         explode = "exec ${lib.getExe pkgs.mpv} " + builtins.toString ../../assets/collide.wav;
       in {
+        margin = 18;
         border-radius = 0;
         border-size = 2;
         default-timeout = 5000;

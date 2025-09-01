@@ -12,12 +12,12 @@
     output = {
       "*" = {
         scale = "1";
-        allow_tearing = "yes";
-        adaptive_sync = "on";
       };
       HDMI-A-2 = {
         mode = "1920x1080@143.999Hz";
         pos = "0 0";
+        allow_tearing = "yes";
+        adaptive_sync = "on";
       };
       HDMI-A-1 = {
         mode = "1440x900@74.984Hz";
@@ -33,6 +33,9 @@
       }
     ];
     workspaceOutputAssign = [
+      { workspace = "1";
+        output = "eDP-1";
+      }
       { workspace = "1";
         output = "HDMI-A-2";
       }

@@ -15,7 +15,7 @@
     wlgreet = lib.getExe pkgs.wlgreet;
     session = lib.getExe config.wayland.windowManager.sway.package;
   in [
-    { command = "${wlgreet} --command 'uwsm start -- sh -c \"WLR_DRM_NO_ATOMIC=1 ${session}\"'; uwsm stop";
+    { command = "${wlgreet} --command 'uwsm start -- sh -c \"WLR_SCENE_DISABLE_DIRECT_SCANOUT=1 WLR_DRM_NO_ATOMIC=1 ${session}\"'; uwsm stop";
       always = false;
     }
   ];

@@ -5,7 +5,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "uwsm start ${lib.getExe config.programs.sway.package}";
+          command = "${lib.getExe config.programs.sway.package}";
           user = "greeter";
         };
       };

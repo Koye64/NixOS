@@ -48,4 +48,5 @@
     greetd.enableGnomeKeyring = true;
   };
   virtualisation.libvirtd.enable = true;
+  users.users.koye.extraGroups = [ "libvirtd" ];
 }

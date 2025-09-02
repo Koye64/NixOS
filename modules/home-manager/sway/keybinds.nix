@@ -80,4 +80,8 @@
       "${mod}+q" = "exec uwsm stop";
     };
   };
+  wayland.windowManager.sway.extraConfig = ''
+    bindgesture swipe:right workspace prev
+    bindgesture swipe:left workspace next
+  '';
 }

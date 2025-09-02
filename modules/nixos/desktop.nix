@@ -38,6 +38,7 @@
       ];
       extest.enable = true;
     };
+    virt-manager.enable = true;
   };
   services = {
     udisks2 = { enable = true; };
@@ -46,4 +47,5 @@
   security.pam.services = {
     greetd.enableGnomeKeyring = true;
   };
+  virtualisation.libvirtd.enable = true;
 }

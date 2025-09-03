@@ -5,6 +5,7 @@
     aseprite
     blender
     discord
+    distrobox
     keepassxc
     krita
     mpc

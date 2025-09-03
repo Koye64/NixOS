@@ -49,12 +49,13 @@
     hyfetch = {
       enable = true;
       settings = {
-        preset = "pansexual";
-        mode = "rgb";
+        color_align.mode = "horizontal";
+        backend = "fastfetch";
         light_dark = "dark";
         lightness = 0.65;
-        backend = "fastfetch";
-        color_align.mode = "horizontal";
+        mode = "rgb";
+        preset = "pansexual";
+        pride_month_disable = true;
       };
     };
     lazygit = {

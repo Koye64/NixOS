@@ -51,5 +51,8 @@
     libvirtd.enable = true;
     docker.enable = true;
   };
-  users.users.koye.extraGroups = [ "libvirtd" ];
+  users.users.koye.extraGroups = [
+    "libvirtd"
+    "docker"
+  ];
 }

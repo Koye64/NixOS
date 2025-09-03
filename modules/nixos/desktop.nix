@@ -47,6 +47,9 @@
   security.pam.services = {
     greetd.enableGnomeKeyring = true;
   };
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    docker.enable = true;
+  };
   users.users.koye.extraGroups = [ "libvirtd" ];
 }

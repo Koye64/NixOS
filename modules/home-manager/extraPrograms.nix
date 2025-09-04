@@ -13,6 +13,7 @@
     prismlauncher
     puddletag
     seahorse
+    typst
     vlc
     yt-dlp
   ];

@@ -68,6 +68,7 @@
     toggleterm = { enable = true; };
     treesitter = { enable = true; };
     treesj = { enable = true; };
+    typst-preview = { enable = true; };
     web-devicons = { enable = true; };
     which-key = {
       enable = true;

@@ -49,10 +49,9 @@
   };
   virtualisation = {
     libvirtd.enable = true;
-    docker.enable = true;
+    podman.enable = true;
   };
   users.users.koye.extraGroups = [
     "libvirtd"
-    "docker"
   ];
 }

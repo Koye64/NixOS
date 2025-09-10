@@ -46,6 +46,7 @@
 #backlight,
 #clock,
 #battery,
+#power-profiles-daemon,
 #pulseaudio,
 #custom-lock,
 #idle_inhibitor {
@@ -78,10 +79,14 @@
   color: @yellow;
 }
 
-#backlight, #battery {
+#backlight, #battery, #power-profiles-daemon {
   border-radius: 0;
   border-left: none;
   border-right: none;
+}
+
+#power-profiles-daemon {
+  color: @mauve;
 }
 
 #pulseaudio {

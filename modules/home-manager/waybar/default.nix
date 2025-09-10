@@ -9,8 +9,8 @@
         layer = "top";
         position = "top";
         modules-left = [ "hyprland/workspaces" "sway/workspaces" "hyprland/window" "sway/window" ];
-        modules-center = [ "mpris" ];
-        modules-right = [ "pulseaudio" "backlight" "battery" "clock" "tray" "custom/lock" "idle_inhibitor" ];
+        # modules-center = [ "mpris" ];
+        modules-right = [ "pulseaudio" "backlight" "power-profiles-daemon" "battery" "clock" "tray" "custom/lock" "idle_inhibitor" ];
         "hyprland/workspaces" = {
           on-scroll-up = "hyprctl dispatch workspace m-1";
           on-scroll-down = "hyprctl dispatch workspace m+1";
@@ -21,7 +21,15 @@
         "sway/window" = {
           all-outputs = true;
         };
-        mpris = { };
+        power-profiles-daemon = {
+          format = "{icon}";
+          format-icons = {
+            default = "";
+            performance = "󱐋";
+            balanced = "";
+            power-saver = "";
+          };
+        };
         tray = {
           icon-size = 16;
           spacing = 8;

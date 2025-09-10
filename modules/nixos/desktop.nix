@@ -43,6 +43,7 @@
   services = {
     udisks2 = { enable = true; };
     gnome.gnome-keyring.enable = true;
+    power-profiles-daemon.enable = true;
   };
   security.pam.services = {
     greetd.enableGnomeKeyring = true;

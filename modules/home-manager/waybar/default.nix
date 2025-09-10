@@ -24,8 +24,8 @@
         power-profiles-daemon = {
           format = "{icon}";
           format-icons = {
-            default = "";
-            performance = "󱐋";
+            default = "";
+            performance = "";
             balanced = "";
             power-saver = "";
           };

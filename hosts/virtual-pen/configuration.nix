@@ -1,0 +1,44 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, inputs, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ../../modules/nixos/main-user.nix
+      ../../modules/nixos/localization.nix
+    ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  localization.enable = true;
+
+  networking.hostName = "virtual-pen";
+  networking.networkmanager.enable = true;
+
+  main-user.enable = true;
+  main-user.userName = "koye";
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "koye" = import ./home.nix;
+    };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs.niri.enable = true;
+
+  services.openssh.enable = true;
+
+  system.stateVersion = "25.11"; # Did you read the comment?
+
+}

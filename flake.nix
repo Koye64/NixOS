@@ -20,5 +20,12 @@
         inputs.home-manager.nixosModules.default
       ];
     };
+    nixosConfigurations.virtual-pen = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/virtual-pen/configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
   };
 }

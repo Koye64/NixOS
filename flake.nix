@@ -17,6 +17,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/bunnybuck/configuration.nix
+        ./modules/nixos
         inputs.home-manager.nixosModules.default
       ];
     };
@@ -24,8 +25,10 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/virtual-pen/configuration.nix
+        ./modules/nixos
         inputs.home-manager.nixosModules.default
       ];
     };
+    homeManagerModules.default = ./modules/home-manager;
   };
 }

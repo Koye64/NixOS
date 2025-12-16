@@ -1,14 +1,14 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ../../modules/home-manager/niri
-      ../../modules/home-manager/catppuccin.nix
-    ];
+  imports = [ ../../modules/home-manager ];
 
+  # User-defined modules
   niri.enable = true;
+
   color-scheme.enable = true;
+
+  font.enable = true;
 
   home.username = "koye";
   home.homeDirectory = "/home/koye";
@@ -23,11 +23,6 @@
     nil
     rust-analyzer
     texlab
-
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-color-emoji
-    noto-fonts-monochrome-emoji
   ];
 
   programs.neovim = {
@@ -81,17 +76,5 @@
   };
   programs.zsh = {
     enable = true;
-  };
-
-  fonts.fontconfig = {
-    enable = true;
-    hinting = "slight";
-    subpixelRendering = "none";
-    defaultFonts = {
-      emoji = [ "Noto Color Emoji" "Noto Emoji" ];
-      monospace = [ "JetbrainsMono Nerd Font" ];
-      sansSerif = [ "Noto Sans" ];
-      serif = [ "Noto Serif" ];
-    };
   };
 }

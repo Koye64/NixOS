@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, inputs, pkgs, ... }:
 let
   cfg = config.main-user;
 in
@@ -12,15 +12,37 @@ in
         username
       '';
     };
+
+    shell = lib.mkOption {
+      default = pkgs.zsh;
+      description = ''
+        user's default shell
+      '';
+    };
+
+    homeConfig = lib.mkOption {
+      default = ./home.nix;
+      description = ''
+        location of the user's home.nix configuration
+      '';
+    };
   };
 
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
       description = "Main user";
-      shell = pkgs.zsh;
+      shell = cfg.shell;
       extraGroups = [ "wheel" ];
     };
     programs.zsh.enable = true;
+
+    home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users.${cfg.userName}.imports = [
+        cfg.homeConfig
+        inputs.self.outputs.homeManagerModules.default
+      ];
+    };
   };
 }

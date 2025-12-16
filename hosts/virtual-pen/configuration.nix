@@ -8,8 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/nixos/main-user.nix
-      ../../modules/nixos/localization.nix
     ];
 
   # Bootloader.
@@ -21,14 +19,10 @@
   networking.hostName = "virtual-pen";
   networking.networkmanager.enable = true;
 
-  main-user.enable = true;
-  main-user.userName = "koye";
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "koye" = import ./home.nix;
-    };
+  main-user = {
+    enable = true;
+    userName = "koye";
+    homeConfig = ./home.nix;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -39,6 +33,5 @@
 
   services.openssh.enable = true;
 
-  system.stateVersion = "25.11"; # Did you read the comment?
-
+  system.stateVersion = "25.11";
 }

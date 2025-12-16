@@ -21,6 +21,11 @@ in {
         extraPackages = with pkgs.bat-extras; [batdiff batman batgrep];
       };
 
+      eza = {
+        enable = true;
+        icons = "auto";
+      };
+
       fish = {
         enable = true;
       };
@@ -41,6 +46,7 @@ in {
       starship = {
         enable = true;
         enableTransience = true;
+        settings = lib.importTOML ./starship.toml;
       };
 
       zsh = {

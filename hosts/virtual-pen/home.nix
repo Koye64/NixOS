@@ -14,22 +14,12 @@
     stateVersion = "25.11";
   };
 
+  shell.enable = true;
+
   programs = {
     home-manager.enable = true;
 
     alacritty = {
-      enable = true;
-    };
-
-    bash = {
-      enable = true;
-    };
-
-    git = {
-      enable = true;
-    };
-
-    zsh = {
       enable = true;
     };
   };

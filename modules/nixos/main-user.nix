@@ -18,7 +18,7 @@ in {
     };
 
     shell = lib.mkOption {
-      default = pkgs.zsh;
+      default = pkgs.fish;
       description = ''
         user's default shell
       '';
@@ -39,7 +39,12 @@ in {
       inherit (cfg) shell;
       extraGroups = ["wheel"];
     };
-    programs.zsh.enable = true;
+
+    programs = {
+      bash.enable = true;
+      zsh.enable = true;
+      fish.enable = true;
+    };
 
     home-manager = {
       extraSpecialArgs = {inherit inputs;};

@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.shell;
@@ -13,6 +14,11 @@ in {
     programs = {
       bash = {
         enable = true;
+      };
+
+      bat = {
+        enable = true;
+        extraPackages = with pkgs.bat-extras; [batdiff batman batgrep];
       };
 
       fish = {

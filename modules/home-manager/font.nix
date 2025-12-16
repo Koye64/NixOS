@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }:
-let
-  cfg = config.font;
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  cfg = config.font;
+in {
   options.font = {
     enable = lib.mkEnableOption "enable user module";
   };
@@ -20,10 +23,10 @@ in
       hinting = "slight";
       subpixelRendering = "none";
       defaultFonts = {
-        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
-        monospace = [ "JetbrainsMono Nerd Font" ];
-        sansSerif = [ "Noto Sans" ];
-        serif = [ "Noto Serif" ];
+        emoji = ["Noto Color Emoji" "Noto Emoji"];
+        monospace = ["JetbrainsMono Nerd Font"];
+        sansSerif = ["Noto Sans"];
+        serif = ["Noto Serif"];
       };
     };
   };

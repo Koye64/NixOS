@@ -13,8 +13,6 @@
   };
 
   outputs = {
-    self,
-    catppuccin,
     nixpkgs,
     nvf,
     ...

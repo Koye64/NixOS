@@ -1,8 +1,12 @@
-{ lib, config, inputs, pkgs, ... }:
-let
-  cfg = config.main-user;
-in
 {
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}: let
+  cfg = config.main-user;
+in {
   options.main-user = {
     enable = lib.mkEnableOption "enable user module";
 
@@ -32,13 +36,13 @@ in
     users.users.${cfg.userName} = {
       isNormalUser = true;
       description = "Main user";
-      shell = cfg.shell;
-      extraGroups = [ "wheel" ];
+      inherit (cfg) shell;
+      extraGroups = ["wheel"];
     };
     programs.zsh.enable = true;
 
     home-manager = {
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = {inherit inputs;};
       users.${cfg.userName}.imports = [
         cfg.homeConfig
         inputs.self.outputs.homeManagerModules.default

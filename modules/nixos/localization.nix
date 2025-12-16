@@ -1,8 +1,10 @@
-{ lib, config, ... }:
-let
-  cfg = config.localization;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.localization;
+in {
   options.localization = {
     enable = lib.mkEnableOption "enable US localization";
 

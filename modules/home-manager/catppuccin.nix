@@ -1,8 +1,11 @@
-{ config, inputs, lib, ... }:
-let
-  cfg = config.color-scheme;
-in
 {
+  config,
+  inputs,
+  lib,
+  ...
+}: let
+  cfg = config.color-scheme;
+in {
   options.color-scheme = {
     enable = lib.mkEnableOption "enable user module";
     flavor = lib.mkOption {
@@ -15,17 +18,17 @@ in
     };
   };
 
-  imports = [ inputs.catppuccin.homeModules.catppuccin ];
+  imports = [inputs.catppuccin.homeModules.catppuccin];
 
   config = lib.mkIf cfg.enable {
     catppuccin = {
       enable = true;
-      flavor = cfg.flavor;
-      accent = cfg.accent;
+      inherit (cfg) flavor;
+      inherit (cfg) accent;
 
       cursors = {
         enable = true;
-        accent = cfg.accent;
+        inherit (cfg) accent;
       };
     };
   };

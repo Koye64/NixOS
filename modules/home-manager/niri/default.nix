@@ -1,8 +1,10 @@
-{ lib, config, pkgs, ... }:
-let
-  cfg = config.niri;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.niri;
+in {
   options.niri = {
     enable = lib.mkEnableOption "enable niri module";
   };

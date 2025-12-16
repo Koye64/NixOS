@@ -20,6 +20,21 @@
       colorcolumn = "80";
     };
 
+    keymaps = [
+      {
+        mode = "n";
+        key = "-";
+        action = "<CMD>Oil<CR>";
+        desc = "Open parent directory";
+      }
+      {
+        mode = ["n" "t"];
+        key = "<C-/>";
+        action = "<CMD>ToggleTerm<CR>";
+        desc = "ToggleTerm";
+      }
+    ];
+
     spellcheck = {
       enable = true;
     };
@@ -106,7 +121,6 @@
     terminal.toggleterm = {
       enable = true;
       lazygit.enable = true;
-      mappings.open = "<C-/>";
     };
 
     mini.move.enable = true;

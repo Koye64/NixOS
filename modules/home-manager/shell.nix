@@ -23,6 +23,20 @@ in {
         enable = true;
       };
 
+      lazygit = {
+        enable = true;
+      };
+
+      nh = {
+        enable = true;
+        flake = /home/koye/nixos;
+      };
+
+      starship = {
+        enable = true;
+        enableTransience = true;
+      };
+
       zsh = {
         enable = true;
       };

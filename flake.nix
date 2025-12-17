@@ -46,7 +46,5 @@
         {environment.systemPackages = [customNeovim.neovim];}
       ];
     };
-
-    homeManagerModules.default = ./modules/home-manager;
   };
 }

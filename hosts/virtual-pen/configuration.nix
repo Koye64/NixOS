@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  localization.enable = true;
+  my-localization.enable = true;
 
   networking.hostName = "virtual-pen";
   networking.networkmanager.enable = true;

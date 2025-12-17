@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./localization.nix
+    ./my-localization.nix
     ./main-user.nix
   ];
 }

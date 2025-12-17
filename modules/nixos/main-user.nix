@@ -50,7 +50,7 @@ in {
       extraSpecialArgs = {inherit inputs;};
       users.${cfg.userName}.imports = [
         cfg.homeConfig
-        inputs.self.outputs.homeManagerModules.default
+        ../home-manager
       ];
     };
   };

@@ -3,9 +3,9 @@
   config,
   ...
 }: let
-  cfg = config.localization;
+  cfg = config.my-localization;
 in {
-  options.localization = {
+  options.my-localization = {
     enable = lib.mkEnableOption "enable US localization";
 
     timeZone = lib.mkOption {

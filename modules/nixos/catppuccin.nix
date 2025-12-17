@@ -18,7 +18,7 @@ in {
     };
   };
 
-  imports = [inputs.catppuccin.homeModules.catppuccin];
+  imports = [inputs.catppuccin.nixosModules.catppuccin];
 
   config = lib.mkIf cfg.enable {
     catppuccin = {
@@ -30,8 +30,6 @@ in {
         enable = true;
         accent = "dark";
       };
-
-      firefox.force = true;
     };
   };
 }

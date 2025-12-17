@@ -17,6 +17,8 @@
   shell.enable = true;
 
   programs = {
+    discord.enable = true;
+
     home-manager.enable = true;
 
     alacritty = {

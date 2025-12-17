@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.niri;
@@ -10,6 +11,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = with pkgs; [xwayland-satellite];
     xdg.configFile."niri/config.kdl".source = ./config.kdl;
   };
 }

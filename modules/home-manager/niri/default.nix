@@ -31,12 +31,16 @@ in {
     };
 
     xdg.configFile."niri/config.kdl".text = let
+      wbg = "${lib.getExe pkgs.wbg}";
+      background = builtins.toString ../../../assets/nix-wallpaper.png;
       rofi = "${lib.getExe config.programs.rofi.package}";
       terminal = "${lib.getExe config.programs.kitty.package}";
       wpctl = "${lib.getExe' pkgs.wireplumber "wpctl"}";
       playerctl = "${lib.getExe pkgs.playerctl}";
       brightnessctl = "${lib.getExe pkgs.brightnessctl}";
     in ''
+      spawn-at-startup "${wbg}" "${background}"
+
       input {
           keyboard {
               xkb {}

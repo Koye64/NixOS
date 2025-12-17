@@ -22,6 +22,10 @@ in {
       };
       zathura.enable = true;
     };
+    services = {
+      easyeffects.enable = true;
+      mako.enable = true;
+    };
     gtk = {
       enable = true;
       theme = {

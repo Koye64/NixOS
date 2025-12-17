@@ -10,10 +10,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
+    home-manager,
     nixpkgs,
+    nur,
     nvf,
     ...
   } @ inputs: let
@@ -32,7 +38,8 @@
       modules = [
         ./hosts/bunnybuck/configuration.nix
         ./modules/nixos
-        inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
+        nur.modules.nixos.default
         {environment.systemPackages = [customNeovim.neovim];}
       ];
     };
@@ -42,7 +49,8 @@
       modules = [
         ./hosts/virtual-pen/configuration.nix
         ./modules/nixos
-        inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
+        nur.modules.nixos.default
         {environment.systemPackages = [customNeovim.neovim];}
       ];
     };

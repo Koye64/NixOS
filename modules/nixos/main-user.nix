@@ -49,6 +49,7 @@ in {
     home-manager = {
       extraSpecialArgs = {inherit inputs;};
       useGlobalPkgs = true;
+      useUserPackages = true;
       users.${cfg.userName}.imports = [
         cfg.homeConfig
         ../home-manager

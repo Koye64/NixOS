@@ -21,6 +21,18 @@ in {
         extraPackages = with pkgs.bat-extras; [batdiff batman batgrep];
       };
 
+      btop = {
+        enable = true;
+      };
+
+      cava = {
+        enable = true;
+        settings = {
+          general.framerate = 144;
+          smoothing.noise_reduction = 14;
+        };
+      };
+
       eza = {
         enable = true;
         icons = "auto";

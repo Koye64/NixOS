@@ -20,9 +20,5 @@
     discord.enable = true;
 
     home-manager.enable = true;
-
-    alacritty = {
-      enable = true;
-    };
   };
 }

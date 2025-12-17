@@ -16,6 +16,7 @@
       scrolloff = 8;
       smartindent = true;
       linebreak = true;
+      wrap = false;
       cursorline = true;
       colorcolumn = "80";
     };

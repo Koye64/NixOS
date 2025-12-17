@@ -20,6 +20,9 @@ in {
         isDefault = true;
         settings = {
           "extensions.autoDisableScopes" = 0;
+          "browser.startup.page" = 3;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
         };
         extensions = {
           force = true;

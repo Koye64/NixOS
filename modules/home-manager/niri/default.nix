@@ -11,10 +11,25 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    programs.alacritty.enable = true;
-    programs.kitty.enable = true;
+    home.packages = with pkgs; [
+      wl-clipboard
+      xwayland-satellite
+    ];
+    programs = {
+      alacritty.enable = true;
+      kitty.enable = true;
+      rofi.enable = true;
+      waybar = {
+        enable = true;
+        systemd.enable = true;
+      };
+      zathura.enable = true;
+    };
+    services = {
+      easyeffects.enable = true;
+      mako.enable = true;
+    };
 
-    home.packages = with pkgs; [xwayland-satellite];
     xdg.configFile."niri/config.kdl".text = let
       rofi = "${lib.getExe config.programs.rofi.package}";
       terminal = "${lib.getExe config.programs.kitty.package}";

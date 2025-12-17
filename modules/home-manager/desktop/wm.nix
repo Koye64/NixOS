@@ -11,21 +11,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      wl-clipboard
-    ];
-    programs = {
-      rofi.enable = true;
-      waybar = {
-        enable = true;
-        systemd.enable = true;
-      };
-      zathura.enable = true;
-    };
-    services = {
-      easyeffects.enable = true;
-      mako.enable = true;
-    };
     gtk = {
       enable = true;
       theme = {

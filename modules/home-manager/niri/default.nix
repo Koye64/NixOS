@@ -31,7 +31,36 @@ in {
     };
     services = {
       easyeffects.enable = true;
-      mako.enable = true;
+      mako = {
+        enable = true;
+        settings = {
+          max-history = 5;
+          sort = "-time";
+
+          on-button-left = "invoke-default-action";
+          on-button-middle = "dismiss-group";
+          on-button-right = "dismiss";
+          on-touch = "invoke-default-action";
+
+          outer-margin = 10;
+          margin = 4;
+          border-radius = 8;
+          icon-border-radius = 4;
+
+          group-by = "app-name,urgency";
+          layer = "overlay";
+
+          "urgency=normal" = {
+            default-timeout = 10000;
+          };
+          "urgency=high" = {
+            default-timeout = 0;
+          };
+          "urgency=low" = {
+            default-timeout = 5000;
+          };
+        };
+      };
       swayidle = let
         lock = "${lib.getExe config.programs.swaylock.package} -fF";
       in {

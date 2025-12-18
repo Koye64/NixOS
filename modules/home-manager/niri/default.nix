@@ -36,16 +36,10 @@ in {
         lock = "${lib.getExe config.programs.swaylock.package} -fF";
       in {
         enable = true;
-        events = [
-          {
-            event = "before-sleep";
-            command = lock;
-          }
-          {
-            event = "lock";
-            command = lock;
-          }
-        ];
+        events = {
+          before-sleep = lock;
+          inherit lock;
+        };
         timeouts = [
           {
             timeout = 300;

@@ -1,4 +1,4 @@
-{...}: {
+{catppuccin, ...}: {
   config.vim = {
     viAlias = true;
     vimAlias = true;
@@ -91,7 +91,7 @@
     theme = {
       enable = true;
       name = "catppuccin";
-      style = "mocha";
+      style = catppuccin.flavor;
     };
 
     autopairs.nvim-autopairs.enable = true;

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  catppuccin,
   inputs,
   pkgs,
   ...
@@ -47,7 +48,10 @@ in {
     };
 
     home-manager = {
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit catppuccin;
+      };
       useGlobalPkgs = true;
       useUserPackages = true;
       users.${cfg.userName}.imports = [

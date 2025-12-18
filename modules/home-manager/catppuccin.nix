@@ -1,5 +1,6 @@
 {
   config,
+  catppuccin,
   inputs,
   lib,
   ...
@@ -9,11 +10,11 @@ in {
   options.color-scheme = {
     enable = lib.mkEnableOption "enable user module";
     flavor = lib.mkOption {
-      default = "mocha";
+      default = catppuccin.flavor;
       description = "color scheme variant";
     };
     accent = lib.mkOption {
-      default = "blue";
+      default = catppuccin.accent;
       description = "accent color";
     };
   };

@@ -26,15 +26,22 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
+    catppuccin.flavor = "mocha";
+    catppuccin.accent = "mauve";
+
     customNeovim = nvf.lib.neovimConfiguration {
       inherit pkgs;
+      extraSpecialArgs = {inherit catppuccin;};
       modules = [./modules/nvf];
     };
   in {
     packages.${system}.my-neovim = customNeovim.neovim;
 
     nixosConfigurations.bunnybuck = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+        inherit catppuccin;
+      };
       modules = [
         ./hosts/bunnybuck/configuration.nix
         ./modules/nixos
@@ -45,7 +52,10 @@
     };
 
     nixosConfigurations.virtual-pen = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+        inherit catppuccin;
+      };
       modules = [
         ./hosts/virtual-pen/configuration.nix
         ./modules/nixos

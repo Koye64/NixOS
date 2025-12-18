@@ -7,7 +7,7 @@
   cfg = config.wm;
 in {
   options.wm = {
-    enable = lib.mkEnableOption "enable Firefox config";
+    enable = lib.mkEnableOption "enable window manager config";
   };
 
   config = lib.mkIf cfg.enable {

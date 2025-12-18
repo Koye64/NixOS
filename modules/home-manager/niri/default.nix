@@ -10,6 +10,8 @@ in {
     enable = lib.mkEnableOption "enable niri module";
   };
 
+  imports = [./waybar.nix];
+
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       wl-clipboard
@@ -19,10 +21,6 @@ in {
       alacritty.enable = true;
       kitty.enable = true;
       rofi.enable = true;
-      waybar = {
-        enable = true;
-        systemd.enable = true;
-      };
       zathura.enable = true;
     };
     services = {
@@ -34,7 +32,7 @@ in {
       palette = (lib.importJSON "${pkgs.catppuccin}/palette/palette.json").${config.catppuccin.flavor}.colors;
       inherit (config.catppuccin) accent;
 
-      wbg = "${lib.getExe pkgs.wbg}";
+      wallpaperd = "${lib.getExe pkgs.swaybg}";
       background = builtins.toString ../../../assets/nix-wallpaper.png;
       rofi = "${lib.getExe config.programs.rofi.package}";
       terminal = "${lib.getExe config.programs.kitty.package}";
@@ -42,7 +40,7 @@ in {
       playerctl = "${lib.getExe pkgs.playerctl}";
       brightnessctl = "${lib.getExe pkgs.brightnessctl}";
     in ''
-      spawn-at-startup "${wbg}" "${background}"
+      spawn-at-startup "${wallpaperd}" "-i" "${background}" "-m" "center"
 
       input {
           keyboard {

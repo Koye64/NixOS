@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [../../modules/home-manager];
 
   # User-defined modules
@@ -15,6 +15,10 @@
   };
 
   shell.enable = true;
+
+  home.packages = with pkgs; [
+    prismlauncher
+  ];
 
   programs = {
     discord.enable = true;

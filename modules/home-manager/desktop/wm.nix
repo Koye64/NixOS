@@ -38,5 +38,19 @@ in {
         button-layout = "";
       };
     };
+    xdg.userDirs = let
+      home = "${config.home.homeDirectory}";
+    in {
+      enable = true;
+      createDirectories = true;
+      desktop = "${home}/desktop";
+      documents = "${home}/documents";
+      download = "${home}/downloads";
+      music = "${home}/music";
+      pictures = "${home}/pictures";
+      publicShare = "${home}/public";
+      templates = "${home}/templates";
+      videos = "${home}/videos";
+    };
   };
 }

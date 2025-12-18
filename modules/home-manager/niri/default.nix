@@ -198,7 +198,7 @@ in {
 
       prefer-no-csd
 
-      screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+      screenshot-path "${config.xdg.userDirs.pictures}/screenshots/%Y-%m-%d %H-%M-%S.png"
       // screenshot-path null
 
       animations {

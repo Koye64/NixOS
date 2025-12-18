@@ -1,0 +1,122 @@
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 14px;
+}
+
+#waybar {
+  background: @crust;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 0.5rem;
+  margin: 5px;
+  background-color: @base;
+  margin-left: 1rem;
+  border: 1px solid @surface0;
+}
+
+#workspaces button {
+  color: @subtext0;
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: @blue;
+  font-weight: bolder;
+}
+#workspaces button.urgent {
+  color: @red;
+}
+
+#workspaces button:hover {
+  color: @mauve;
+  background-color: transparent;
+}
+
+#window {
+  padding: 0rem 0.5rem;
+}
+
+#mpris,
+#tray,
+#backlight,
+#clock,
+#battery,
+#power-profiles-daemon,
+#pulseaudio,
+#custom-lock,
+#idle_inhibitor {
+  background-color: @base;
+  padding: 0rem 1rem;
+  margin: 5px 0;
+  border: 1px solid @surface0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 0.5rem 0.5rem 0px;
+  margin-right: 1rem;
+  border-left: none;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight,
+#battery,
+#power-profiles-daemon {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+#power-profiles-daemon {
+  color: @mauve;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 0.5rem 0px 0px 0.5rem;
+  margin-left: 1rem;
+  border-right: none;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 0.5rem;
+}
+
+#custom-lock {
+  border-radius: 0.5rem 0px 0px 0.5rem;
+  color: @lavender;
+  border-right: none;
+}
+
+#idle_inhibitor {
+  margin-right: 1rem;
+  border-radius: 0px 0.5rem 0.5rem 0px;
+  color: @red;
+  border-left: none;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}

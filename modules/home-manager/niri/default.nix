@@ -10,7 +10,7 @@ in {
     enable = lib.mkEnableOption "enable niri module";
   };
 
-  imports = [./waybar.nix];
+  imports = [./waybar];
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

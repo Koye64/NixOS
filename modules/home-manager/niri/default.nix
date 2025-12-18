@@ -32,11 +32,11 @@ in {
     services = {
       easyeffects.enable = true;
       mako.enable = true;
-      swayidle = {
+      swayidle = let
+        lock = "${lib.getExe config.programs.swaylock.package} -fF";
+      in {
         enable = true;
-        events = let
-          lock = "${lib.getExe config.programs.swaylock.package} -fF";
-        in [
+        events = [
           {
             event = "before-sleep";
             command = lock;
@@ -44,6 +44,16 @@ in {
           {
             event = "lock";
             command = lock;
+          }
+        ];
+        timeouts = [
+          {
+            timeout = 300;
+            command = lock;
+          }
+          {
+            timeout = 600;
+            command = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
           }
         ];
       };
@@ -57,6 +67,7 @@ in {
       background = builtins.toString ../../../assets/nix-wallpaper.png;
       rofi = "${lib.getExe config.programs.rofi.package}";
       terminal = "${lib.getExe config.programs.kitty.package}";
+      loginctl = "${lib.getExe' pkgs.systemd "loginctl"}";
       wpctl = "${lib.getExe' pkgs.wireplumber "wpctl"}";
       playerctl = "${lib.getExe pkgs.playerctl}";
       brightnessctl = "${lib.getExe pkgs.brightnessctl}";
@@ -215,7 +226,7 @@ in {
           Mod+Shift+Slash { show-hotkey-overlay; }
           Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "${terminal}"; }
           Mod+D hotkey-overlay-title="Run an Application" { spawn "${rofi}" "-show" "drun"; }
-          Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
+          Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "${loginctl}" "lock-session"; }
 
           XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "${wpctl} set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
           XF86AudioLowerVolume allow-when-locked=true { spawn-sh "${wpctl} set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

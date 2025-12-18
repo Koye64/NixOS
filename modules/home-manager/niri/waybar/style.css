@@ -10,7 +10,7 @@ window#waybar {
 #workspaces {
   border-radius: 0.5rem;
   margin: 4px 4px;
-  padding: 2px 6px;
+  padding: 0px 6px;
   background-color: @base;
   box-shadow: inset 0px 0px 0px 1px @surface0;
 }
@@ -50,7 +50,7 @@ window#waybar {
 #idle_inhibitor,
 #taskbar,
 #scratchpad {
-  padding: 4px 8px;
+  padding: 0px 8px;
   margin: 4px;
   color: @text;
   background-color: @base;
@@ -96,7 +96,7 @@ window#waybar {
 #backlight,
 #bluetooth,
 #power-profiles-daemon {
-  padding: 4px 8px;
+  padding: 0px 8px;
   margin: 4px 0px;
   color: @text;
   background-color: @base;
@@ -105,7 +105,7 @@ window#waybar {
 }
 
 #mode {
-  padding: 4px;
+  padding: 0px;
   color: @red;
   font-weight: bolder;
 }
@@ -181,9 +181,9 @@ label:focus {
 }
 
 #idle_inhibitor {
-  padding: 4px;
+  padding: 0px;
   padding-left: 8px;
-  padding-right: 6px;
+  padding-right: 5px;
   color: @red;
 }
 
@@ -192,7 +192,7 @@ label:focus {
 }
 
 #scratchpad {
-  padding: 4px;
+  padding: 0px;
   color: @mauve;
   font-weight: bold;
 }

@@ -27,7 +27,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     catppuccin.flavor = "mocha";
-    catppuccin.accent = "mauve";
+    catppuccin.accent = "blue";
 
     customNeovim = nvf.lib.neovimConfiguration {
       inherit pkgs;

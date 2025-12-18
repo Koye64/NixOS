@@ -31,6 +31,9 @@ in {
     };
 
     xdg.configFile."niri/config.kdl".text = let
+      palette = (lib.importJSON "${pkgs.catppuccin}/palette/palette.json").${config.catppuccin.flavor}.colors;
+      inherit (config.catppuccin) accent;
+
       wbg = "${lib.getExe pkgs.wbg}";
       background = builtins.toString ../../../assets/nix-wallpaper.png;
       rofi = "${lib.getExe config.programs.rofi.package}";
@@ -78,6 +81,8 @@ in {
           mode "1920x1080@143.999"
           scale 1
           position x=1440 y=0
+          focus-at-startup
+          variable-refresh-rate
       }
 
       output "Acer Technologies Acer AL1916W L86080584231" {
@@ -89,6 +94,8 @@ in {
       layout {
           gaps 8
           center-focused-column "never"
+
+          background-color "${palette.mantle.hex}"
 
           preset-column-widths {
               proportion 0.33333
@@ -102,17 +109,17 @@ in {
           focus-ring {
               // off
               width 2
-              active-color "#7fc8ff"
-              inactive-color "#505050"
-              urgent-color "#f38ba8"
+              active-color "${palette.crust.hex}"
+              inactive-color "${palette.crust.hex}"
+              urgent-color "${palette.crust.hex}"
           }
 
           border {
               // off
               width 2
-              active-color "#ffc87f"
-              inactive-color "#505050"
-              urgent-color "#9b0000"
+              active-color "${palette.${accent}.hex}"
+              inactive-color "${palette.base.hex}"
+              urgent-color "${palette.red.hex}"
           }
 
           shadow {
@@ -167,9 +174,18 @@ in {
       }
 
       overview {
-          // backdrop-color ""
-          /-workspace-shadow {
-              color "#11111b"
+          backdrop-color "${palette.mantle.hex}"
+          workspace-shadow {
+              color "${palette.crust.hex}"
+          }
+      }
+
+      recent-windows {
+          highlight {
+              active-color "${palette.${accent}.hex}"
+              urgent-color "${palette.red.hex}"
+              padding 24
+              corner-radius 8
           }
       }
 

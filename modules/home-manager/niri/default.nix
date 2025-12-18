@@ -22,10 +22,31 @@ in {
       kitty.enable = true;
       rofi.enable = true;
       zathura.enable = true;
+      swaylock = {
+        enable = true;
+        settings = {
+          image = builtins.toString ../../../assets/nix-wallpaper.png;
+        };
+      };
     };
     services = {
       easyeffects.enable = true;
       mako.enable = true;
+      swayidle = {
+        enable = true;
+        events = let
+          lock = "${lib.getExe config.programs.swaylock.package} -fF";
+        in [
+          {
+            event = "before-sleep";
+            command = lock;
+          }
+          {
+            event = "lock";
+            command = lock;
+          }
+        ];
+      };
     };
 
     xdg.configFile."niri/config.kdl".text = let

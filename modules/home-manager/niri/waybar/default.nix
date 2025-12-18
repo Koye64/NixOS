@@ -11,18 +11,8 @@
       bar = {
         layer = "top";
         position = "top";
-        modules-left = ["hyprland/workspaces" "sway/workspaces" "hyprland/window" "sway/window"];
-        modules-right = ["pulseaudio" "backlight" "power-profiles-daemon" "battery" "clock" "tray" "custom/lock" "idle_inhibitor"];
-        "hyprland/workspaces" = {
-          on-scroll-up = "hyprctl dispatch workspace m-1";
-          on-scroll-down = "hyprctl dispatch workspace m+1";
-        };
-        "hyprland/window" = {
-          separate-outputs = true;
-        };
-        "sway/window" = {
-          all-outputs = true;
-        };
+        modules-left = ["niri/workspaces" "niri/window"];
+        modules-right = ["tray" "pulseaudio" "backlight" "power-profiles-daemon" "battery" "clock" "idle_inhibitor"];
         power-profiles-daemon = {
           format = "{icon}";
           format-icons = {
@@ -64,13 +54,8 @@
           };
           on-click = "${lib.getExe pkgs.pavucontrol}";
         };
-        "custom/lock" = {
-          tooltip = false;
-          on-click = "loginctl lock-session";
-          format = "";
-        };
         idle_inhibitor = {
-          format = "{icon}";
+          format = "{icon} ";
           format-icons = {
             activated = "󰈈";
             deactivated = "󰛐";

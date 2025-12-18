@@ -3,120 +3,200 @@
   font-size: 14px;
 }
 
-#waybar {
-  background: @crust;
-  color: @text;
-  margin: 5px 5px;
+window#waybar {
+  background-color: transparent;
 }
 
 #workspaces {
   border-radius: 0.5rem;
-  margin: 5px;
+  margin: 4px 4px;
+  padding: 2px 6px;
   background-color: @base;
-  margin-left: 1rem;
-  border: 1px solid @surface0;
+  box-shadow: inset 0px 0px 0px 1px @surface0;
 }
 
 #workspaces button {
+  padding: 0px;
+  margin: 2px;
+  border-width: 0px;
+  border-radius: 0.5em;
+  background-color: transparent;
   color: @subtext0;
-  border-radius: 0.5rem;
-  padding: 0rem 0.5rem;
 }
 
-#workspaces button.focused,
-#workspaces button.active {
-  color: @blue;
-  font-weight: bolder;
+/* GTK workarounds */
+#workspaces button:hover {
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  background-image: none;
 }
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: @blue;
+  font-weight: bold;
+}
+
 #workspaces button.urgent {
   color: @red;
 }
 
-#workspaces button:hover {
-  color: @mauve;
-  background-color: transparent;
-}
-
-#window {
-  padding: 0rem 0.5rem;
-}
-
-#mpris,
-#tray,
-#backlight,
-#clock,
-#battery,
-#power-profiles-daemon,
 #pulseaudio,
-#custom-lock,
-#idle_inhibitor {
+#clock,
+#window,
+#tray,
+#mode,
+#idle_inhibitor,
+#taskbar,
+#scratchpad {
+  padding: 4px 8px;
+  margin: 4px;
+  color: @text;
   background-color: @base;
-  padding: 0rem 1rem;
-  margin: 5px 0;
   border: 1px solid @surface0;
+  border-radius: 0.5em;
+}
+
+#taskbar {
+  padding-right: 0px;
+}
+#taskbar button {
+  padding: 0px;
+  margin: 2px;
+}
+#taskbar button:hover {
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  background-image: none;
+}
+
+#waybar.empty #window {
+  background: none;
+  border: none;
+}
+
+#pulseaudio {
+  margin-right: 0px;
+  padding-left: 4px;
+  padding-right: 2px;
+  border-radius: 0.5em 0em 0em 0.5em;
+  border-right: none;
+}
+#clock {
+  margin-left: 0px;
+  padding-left: 2px;
+  padding-right: 4px;
+  border-radius: 0em 0.5em 0.5em 0em;
+  border-left: none;
+}
+
+#battery,
+#backlight,
+#bluetooth,
+#power-profiles-daemon {
+  padding: 4px 8px;
+  margin: 4px 0px;
+  color: @text;
+  background-color: @base;
+  border-top: 1px solid @surface0;
+  border-bottom: 1px solid @surface0;
+}
+
+#mode {
+  padding: 4px;
+  color: @red;
+  font-weight: bolder;
+}
+
+#window,
+#workspaces {
+  margin: 4px;
 }
 
 #clock {
-  color: @blue;
-  border-radius: 0px 0.5rem 0.5rem 0px;
-  margin-right: 1rem;
-  border-left: none;
+  color: @yellow;
 }
 
 #battery {
   color: @green;
 }
 
-#battery.charging {
+#battery.charging,
+#battery.plugged {
   color: @green;
 }
 
-#battery.warning:not(.charging) {
-  color: @red;
+@keyframes blink {
+  to {
+    color: @red;
+  }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+  color: @mauve;
+  padding-right: 12px;
+}
+
+label:focus {
+  border-color: @text;
 }
 
 #backlight {
-  color: @yellow;
+  color: @peach;
 }
 
-#backlight,
-#battery,
-#power-profiles-daemon {
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
+#bluetooth {
+  color: @blue;
 }
-
-#power-profiles-daemon {
-  color: @mauve;
+#bluetooth.disabled,
+#bluetooth.off {
+  color: @overlay0;
 }
 
 #pulseaudio {
-  color: @maroon;
-  border-radius: 0.5rem 0px 0px 0.5rem;
-  margin-left: 1rem;
-  border-right: none;
-}
-
-#custom-music {
-  color: @mauve;
-  border-radius: 0.5rem;
-}
-
-#custom-lock {
-  border-radius: 0.5rem 0px 0px 0.5rem;
-  color: @lavender;
-  border-right: none;
-}
-
-#idle_inhibitor {
-  margin-right: 1rem;
-  border-radius: 0px 0.5rem 0.5rem 0px;
   color: @red;
-  border-left: none;
 }
 
 #tray {
-  margin-right: 1rem;
-  border-radius: 0.5rem;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#idle_inhibitor {
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 6px;
+  color: @red;
+}
+
+#idle_inhibitor.activated {
+  color: @blue;
+}
+
+#scratchpad {
+  padding: 4px;
+  color: @mauve;
+  font-weight: bold;
+}
+
+#scratchpad.empty {
+  background-color: transparent;
 }

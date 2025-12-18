@@ -64,6 +64,10 @@ in {
         settings = lib.importTOML ./starship.toml;
       };
 
+      yazi = {
+        enable = true;
+      };
+
       zsh = {
         enable = true;
       };

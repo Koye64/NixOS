@@ -50,19 +50,5 @@
         {environment.systemPackages = [customNeovim.neovim];}
       ];
     };
-
-    nixosConfigurations.virtual-pen = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
-        inherit catppuccin;
-      };
-      modules = [
-        ./hosts/virtual-pen/configuration.nix
-        ./modules/nixos
-        home-manager.nixosModules.default
-        nur.modules.nixos.default
-        {environment.systemPackages = [customNeovim.neovim];}
-      ];
-    };
   };
 }

@@ -27,19 +27,25 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  programs.niri.enable = true;
+  programs = {
+    niri.enable = true;
 
-  programs.steam = {
-    enable = true;
-    extraPackages = with pkgs; [
-      gamescope
-    ];
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
+    steam = {
+      enable = true;
+      extraPackages = with pkgs; [
+        gamescope
+      ];
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
   };
 
-  services.openssh.enable = true;
+  services = {
+    power-profiles-daemon.enable = true;
+
+    openssh.enable = true;
+  };
 
   system.stateVersion = "25.11";
 }

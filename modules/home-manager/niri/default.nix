@@ -80,6 +80,10 @@ in {
           }
         ];
       };
+      udiskie = {
+        enable = true;
+        tray = "never";
+      };
     };
 
     xdg.configFile."niri/config.kdl".text = let

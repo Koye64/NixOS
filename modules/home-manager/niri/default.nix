@@ -10,8 +10,6 @@ in {
     enable = lib.mkEnableOption "enable niri module";
   };
 
-  imports = [./waybar];
-
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       wl-clipboard
@@ -20,87 +18,41 @@ in {
     programs = {
       alacritty.enable = true;
       kitty.enable = true;
-      rofi.enable = true;
       zathura.enable = true;
-      swaylock = {
-        enable = true;
-        settings = {
-          image = builtins.toString ../../../assets/nix-wallpaper.png;
-        };
-      };
     };
     services = {
       easyeffects.enable = true;
-      mako = {
-        enable = true;
-        settings = {
-          max-history = 5;
-          sort = "-time";
-
-          on-button-left = "invoke-default-action";
-          on-button-middle = "dismiss-group";
-          on-button-right = "dismiss";
-          on-touch = "invoke-default-action";
-
-          outer-margin = 10;
-          margin = 4;
-          border-radius = 8;
-          icon-border-radius = 4;
-
-          group-by = "app-name,urgency";
-          layer = "overlay";
-
-          "urgency=normal" = {
-            default-timeout = 10000;
-          };
-          "urgency=high" = {
-            default-timeout = 0;
-          };
-          "urgency=low" = {
-            default-timeout = 5000;
-          };
-        };
-      };
-      swayidle = let
-        lock = "${lib.getExe config.programs.swaylock.package} -fF";
-      in {
-        enable = true;
-        events = {
-          before-sleep = lock;
-          inherit lock;
-        };
-        timeouts = [
-          {
-            timeout = 300;
-            command = lock;
-          }
-          {
-            timeout = 600;
-            command = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
-          }
-        ];
-      };
       udiskie = {
         enable = true;
         tray = "never";
       };
     };
 
+    programs.dankMaterialShell = {
+      enable = true;
+
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+
+      enableSystemMonitoring = true;
+      enableClipboard = true;
+      enableVPN = false;
+      enableDynamicTheming = true;
+      enableAudioWavelength = true;
+      enableCalendarEvents = true;
+    };
+
     xdg.configFile."niri/config.kdl".text = let
       palette = (lib.importJSON "${pkgs.catppuccin}/palette/palette.json").${config.catppuccin.flavor}.colors;
       inherit (config.catppuccin) accent;
 
-      wallpaperd = "${lib.getExe pkgs.swaybg}";
-      background = builtins.toString ../../../assets/nix-wallpaper.png;
-      rofi = "${lib.getExe config.programs.rofi.package}";
       terminal = "${lib.getExe config.programs.kitty.package}";
       loginctl = "${lib.getExe' pkgs.systemd "loginctl"}";
       wpctl = "${lib.getExe' pkgs.wireplumber "wpctl"}";
       playerctl = "${lib.getExe pkgs.playerctl}";
-      brightnessctl = "${lib.getExe pkgs.brightnessctl}";
     in ''
-      spawn-at-startup "${wallpaperd}" "-i" "${background}" "-m" "center"
-
       input {
           keyboard {
               xkb {}
@@ -180,7 +132,7 @@ in {
           }
 
           shadow {
-              // on
+              on
               // draw-behind-window true
               softness 30
               spread 5
@@ -252,7 +204,7 @@ in {
 
           Mod+Shift+Slash { show-hotkey-overlay; }
           Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "${terminal}"; }
-          Mod+D hotkey-overlay-title="Run an Application" { spawn "${rofi}" "-show" "drun"; }
+          Mod+D hotkey-overlay-title="Run an Application" { spawn "dms" "ipc" "spotlight" "toggle"; }
           Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "${loginctl}" "lock-session"; }
 
           XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "${wpctl} set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
@@ -265,8 +217,8 @@ in {
           XF86AudioPrev        allow-when-locked=true { spawn-sh "${playerctl} previous"; }
           XF86AudioNext        allow-when-locked=true { spawn-sh "${playerctl} next"; }
 
-          XF86MonBrightnessUp allow-when-locked=true { spawn "${brightnessctl}" "--class=backlight" "set" "+10%"; }
-          XF86MonBrightnessDown allow-when-locked=true { spawn "${brightnessctl}" "--class=backlight" "set" "10%-"; }
+          XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "brightness" "increment" "10" ""; }
+          XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "brightness" "decrement" "10" ""; }
 
           Mod+O repeat=false { toggle-overview; }
 
@@ -427,8 +379,7 @@ in {
 
           Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-          // The quit action will show a confirmation dialog to avoid accidental exits.
-          Mod+Shift+E { quit; }
+          Mod+E { spawn "dms" "ipc" "powermenu" "toggle"; }
           Ctrl+Alt+Delete { quit; }
       }
     '';

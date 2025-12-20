@@ -54,8 +54,10 @@ in {
       };
       useGlobalPkgs = true;
       useUserPackages = true;
+      backupFileExtension = "hm-backup";
       users.${cfg.userName}.imports = [
         cfg.homeConfig
+        inputs.dms.homeModules.dankMaterialShell.default
         ../home-manager
       ];
     };

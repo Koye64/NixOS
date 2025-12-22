@@ -23,9 +23,8 @@
 
   programs = {
     discord.enable = true;
-
     home-manager.enable = true;
-
+    mpv.enable = true;
     obs-studio.enable = true;
   };
 }

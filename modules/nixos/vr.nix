@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.vr;
@@ -8,8 +9,9 @@ in {
   options.vr = {
     enable = lib.mkEnableOption "enable VR streaming configuration";
   };
-  config = {
-    networking.networkmanager.settings = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [wlx-overlay-s];
+    networking.networkmanager.settings = {
       connection-wifi = {
         match-device = "type:wifi";
         "ipv4.route-metric" = 100;
@@ -21,7 +23,7 @@ in {
         "ipv6.route-metric" = 200;
       };
     };
-    services.wivrn = lib.mkIf cfg.enable {
+    services.wivrn = {
       enable = true;
       openFirewall = true;
       defaultRuntime = true;

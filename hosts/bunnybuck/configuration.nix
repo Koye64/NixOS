@@ -20,6 +20,7 @@
   main-user = {
     enable = true;
     userName = "koye";
+    userDescription = "Koye";
     homeConfig = ./home.nix;
   };
 

@@ -18,6 +18,13 @@ in {
       '';
     };
 
+    userDescription = lib.mkOption {
+      default = "User";
+      description = ''
+        user's description (full name)
+      '';
+    };
+
     shell = lib.mkOption {
       default = pkgs.fish;
       description = ''
@@ -36,7 +43,7 @@ in {
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
       isNormalUser = true;
-      description = "Main user";
+      description = cfg.userDescription;
       inherit (cfg) shell;
       extraGroups = ["wheel"];
     };
@@ -54,8 +61,10 @@ in {
       };
       useGlobalPkgs = true;
       useUserPackages = true;
+      backupFileExtension = "hm-backup";
       users.${cfg.userName}.imports = [
         cfg.homeConfig
+        inputs.dms.homeModules.dankMaterialShell.default
         ../home-manager
       ];
     };

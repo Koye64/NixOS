@@ -6,6 +6,10 @@
 
     catppuccin.url = "github:catppuccin/nix";
     nvf.url = "github:notashelf/nvf";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

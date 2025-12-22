@@ -143,7 +143,7 @@ in {
           struts {
               // left 64
               // right 64
-              // top 64
+              top -5
               // bottom 64
           }
       }
@@ -196,6 +196,11 @@ in {
               padding 24
               corner-radius 8
           }
+      }
+
+      layer-rule {
+          match namespace="dms:blurwallpaper"
+          place-within-backdrop true
       }
 
       binds {

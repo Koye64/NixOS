@@ -13,6 +13,7 @@
 
   my-localization.enable = true;
   color-scheme.enable = true;
+  vr.enable = true;
 
   networking.hostName = "bunnybuck";
   networking.networkmanager.enable = true;

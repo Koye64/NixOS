@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     krita
     prismlauncher
+    rustup
   ];
 
   programs = {

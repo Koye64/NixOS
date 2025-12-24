@@ -17,6 +17,7 @@
   shell.enable = true;
 
   home.packages = with pkgs; [
+    blender-hip
     krita
     luanti
     prismlauncher

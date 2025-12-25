@@ -30,4 +30,6 @@
     mpv.enable = true;
     obs-studio.enable = true;
   };
+
+  services.syncthing.enable = true;
 }

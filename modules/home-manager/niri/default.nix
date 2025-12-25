@@ -80,6 +80,11 @@ in {
           focus-follows-mouse max-scroll-amount="0%"
       }
 
+      cursor {
+          xcursor-theme "${config.home.pointerCursor.name}"
+          xcursor-size ${builtins.toString config.home.pointerCursor.size}
+      }
+
       output "Red Hat, Inc. QEMU Monitor Unknown" {
           mode "1920x1080@60.000"
           scale 1

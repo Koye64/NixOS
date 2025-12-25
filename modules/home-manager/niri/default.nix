@@ -18,6 +18,7 @@ in {
     programs = {
       alacritty.enable = true;
       kitty.enable = true;
+      rofi.enable = true;
       zathura.enable = true;
     };
     services = {

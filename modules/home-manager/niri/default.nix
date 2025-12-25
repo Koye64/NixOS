@@ -104,7 +104,7 @@ in {
           gaps 8
           center-focused-column "never"
 
-          background-color "${palette.mantle.hex}"
+          background-color "${palette.crust.hex}"
 
           preset-column-widths {
               proportion 0.33333

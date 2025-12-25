@@ -16,6 +16,8 @@
 
   shell.enable = true;
 
+  home.file.".face".source = ../../assets/koye_buwayani_256.png;
+
   home.packages = with pkgs; [
     blender-hip
     krita

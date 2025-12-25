@@ -29,6 +29,7 @@ in {
       enable = true;
       x11.enable = true;
       gtk.enable = true;
+      size = 24;
     };
     dconf.settings = {
       "org/gnome/desktop/interface" = {

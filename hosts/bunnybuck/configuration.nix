@@ -1,10 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.dms.nixosModules.greeter
   ];
 
   # Bootloader.
@@ -30,6 +36,15 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs = {
+    dankMaterialShell.greeter = {
+      enable = true;
+      compositor = {
+        name = "niri";
+        customConfig = config.home-manager.users.koye.xdg.configFile."niri/config.kdl".text;
+      };
+      configHome = "/home/koye";
+    };
+
     niri.enable = true;
 
     steam = {
@@ -48,7 +63,7 @@
         niri = {
           prettyName = "Niri";
           comment = "Niri compositor managed by UWSM";
-          binPath = "/run/current-system/sw/bin/niri";
+          binPath = "/run/current-system/sw/bin/niri-session";
         };
       };
     };

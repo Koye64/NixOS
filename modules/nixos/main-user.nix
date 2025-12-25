@@ -45,7 +45,10 @@ in {
       isNormalUser = true;
       description = cfg.userDescription;
       inherit (cfg) shell;
-      extraGroups = ["wheel"];
+      extraGroups = [
+        "input"
+        "wheel"
+      ];
     };
 
     programs = {

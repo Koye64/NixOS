@@ -28,6 +28,12 @@
 
   programs = {
     discord.enable = true;
+    distrobox = {
+      enable = true;
+      containers = {
+        arch.image = "archlinux:latest";
+      };
+    };
     home-manager.enable = true;
     mpv.enable = true;
     obs-studio.enable = true;

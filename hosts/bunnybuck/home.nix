@@ -20,6 +20,7 @@
 
   home.packages = with pkgs; [
     blender-hip
+    blockbench
     krita
     luanti
     prismlauncher

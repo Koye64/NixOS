@@ -45,8 +45,6 @@
       configHome = "/home/koye";
     };
 
-    fuse.enable = true;
-
     niri.enable = true;
 
     steam = {

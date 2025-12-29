@@ -19,6 +19,7 @@
   home.file.".face".source = ../../assets/koye_buwayani_256.png;
 
   home.packages = with pkgs; [
+    appimage-run
     blender-hip
     blockbench
     krita

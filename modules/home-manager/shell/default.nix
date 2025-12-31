@@ -64,6 +64,10 @@ in {
         settings = lib.importTOML ./starship.toml;
       };
 
+      tmux = {
+        enable = true;
+      };
+
       yazi = {
         enable = true;
       };

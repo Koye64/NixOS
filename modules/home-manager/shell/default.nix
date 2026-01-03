@@ -28,7 +28,11 @@ in {
       cava = {
         enable = true;
         settings = {
-          general.framerate = 144;
+          general = {
+            framerate = 144;
+            bar_width = 1;
+            bar_spacing = 0;
+          };
           smoothing.noise_reduction = 14;
         };
       };

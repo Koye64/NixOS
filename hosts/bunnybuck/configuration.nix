@@ -70,6 +70,8 @@
   };
 
   services = {
+    flatpak.enable = true;
+
     openssh.enable = true;
 
     udisks2.enable = true;

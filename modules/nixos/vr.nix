@@ -27,7 +27,7 @@ in {
       enable = true;
       openFirewall = true;
       defaultRuntime = true;
-      autoStart = true;
+      autoStart = false;
     };
   };
 }

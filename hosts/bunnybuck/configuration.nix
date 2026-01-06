@@ -70,12 +70,12 @@
   };
 
   services = {
+    desktopManager.plasma6 = {
+      enable = true;
+    };
     flatpak.enable = true;
-
     openssh.enable = true;
-
     udisks2.enable = true;
-
     power-profiles-daemon.enable = true;
   };
 

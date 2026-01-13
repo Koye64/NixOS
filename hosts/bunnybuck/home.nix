@@ -27,6 +27,7 @@
     luanti
     prismlauncher
     rustup
+    texliveFull
   ];
 
   programs = {

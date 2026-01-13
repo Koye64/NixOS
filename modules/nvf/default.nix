@@ -1,10 +1,16 @@
-{catppuccin, ...}: {
+{
+  catppuccin,
+  lib,
+  pkgs,
+  ...
+}: {
   config.vim = {
     viAlias = true;
     vimAlias = true;
 
     clipboard = {
       enable = true;
+      registers = "unnamedplus";
       providers.wl-copy.enable = true;
     };
 
@@ -19,6 +25,11 @@
       wrap = false;
       cursorline = true;
       colorcolumn = "80";
+    };
+    globals = {
+      vimtex_view_method = "zathura";
+      mapleader = " ";
+      maplocalleader = "\\";
     };
 
     keymaps = [
@@ -43,6 +54,13 @@
     lsp = {
       enable = true;
       formatOnSave = true;
+      servers = {
+        texlab = {
+          enable = true;
+          cmd = ["${lib.getExe pkgs.texlab}"];
+          filetypes = ["tex"];
+        };
+      };
     };
 
     debugger = {
@@ -144,6 +162,12 @@
           nix = "110";
         };
       };
+    };
+    lazy.plugins.vimtex = {
+      enabled = true;
+      package = pkgs.vimPlugins.vimtex;
+      lazy = true;
+      ft = "tex";
     };
   };
 }

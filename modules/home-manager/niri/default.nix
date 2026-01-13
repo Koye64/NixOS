@@ -95,7 +95,7 @@ in {
       output "ASUSTek COMPUTER INC VG248 S1LMQS073379" {
           mode "1920x1080@143.999"
           scale 1
-          position x=0 y=0
+          position x=1440 y=0
           focus-at-startup
           variable-refresh-rate
       }
@@ -103,7 +103,7 @@ in {
       output "Acer Technologies Acer AL1916W L86080584231" {
           mode "1440x900@74.984"
           scale 1
-          position x=1920 y=180
+          position x=0 y=0
       }
 
       layout {

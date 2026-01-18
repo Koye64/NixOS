@@ -72,6 +72,10 @@ in {
               accel-profile "adaptive" // "adaptive" or "flat"
           }
 
+          tablet {
+              map-to-output "ASUSTek COMPUTER INC VG248 S1LMQS073379"
+          }
+
           mouse {
               accel-speed 0
               accel-profile "flat"

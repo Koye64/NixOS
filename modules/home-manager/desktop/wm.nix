@@ -22,9 +22,12 @@ in {
       };
     };
     qt = {
-      enable = true;
+      enable = false;
       style.name = "kvantum";
     };
+    home.packages = [
+      pkgs.klassy
+    ];
     home.pointerCursor = {
       enable = true;
       x11.enable = true;

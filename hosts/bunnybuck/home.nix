@@ -21,7 +21,7 @@
   home.packages = with pkgs; [
     alcom
     appimage-run
-    blender-hip
+    blender
     blockbench
     krita
     luanti

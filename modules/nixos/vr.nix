@@ -10,7 +10,7 @@ in {
     enable = lib.mkEnableOption "enable VR streaming configuration";
   };
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [wlx-overlay-s];
+    environment.systemPackages = with pkgs; [wayvr];
     networking.networkmanager.settings = {
       connection-wifi = {
         match-device = "type:wifi";

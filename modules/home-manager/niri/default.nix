@@ -29,7 +29,7 @@ in {
       };
     };
 
-    programs.dankMaterialShell = {
+    programs.dank-material-shell = {
       enable = true;
 
       systemd = {
@@ -38,7 +38,6 @@ in {
       };
 
       enableSystemMonitoring = true;
-      enableClipboard = true;
       enableVPN = false;
       enableDynamicTheming = true;
       enableAudioWavelength = true;

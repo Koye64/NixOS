@@ -140,8 +140,6 @@
       gitsigns.codeActions.enable = false;
     };
 
-    minimap.codewindow.enable = true;
-
     terminal.toggleterm = {
       enable = true;
       lazygit.enable = true;

@@ -25,8 +25,10 @@ in {
       enable = false;
       style.name = "kvantum";
     };
-    home.packages = [
-      pkgs.klassy
+    home.packages = with pkgs; [
+      kde-rounded-corners
+      kdePackages.krohnkite
+      klassy
     ];
     home.pointerCursor = {
       enable = true;

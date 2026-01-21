@@ -15,22 +15,9 @@ in {
       wl-clipboard
       xwayland-satellite
     ];
-    programs = {
-      alacritty.enable = true;
-      kitty.enable = true;
-      rofi.enable = true;
-      zathura.enable = true;
-    };
-    services = {
-      easyeffects.enable = true;
-      udiskie = {
-        enable = true;
-        tray = "never";
-      };
-    };
 
     programs.dank-material-shell = {
-      enable = true;
+      enable = false;
 
       systemd = {
         enable = true;

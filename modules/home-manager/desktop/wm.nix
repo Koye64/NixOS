@@ -11,8 +11,17 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    programs = {
+      alacritty.enable = true;
+      kitty.enable = true;
+      rofi.enable = true;
+      zathura.enable = true;
+    };
+    services = {
+      easyeffects.enable = true;
+    };
     gtk = {
-      enable = true;
+      enable = false;
       theme = {
         name = "adw-gtk3-dark";
         package = pkgs.adw-gtk3;
@@ -23,7 +32,6 @@ in {
     };
     qt = {
       enable = false;
-      style.name = "kvantum";
     };
     home.packages = with pkgs; [
       kde-rounded-corners

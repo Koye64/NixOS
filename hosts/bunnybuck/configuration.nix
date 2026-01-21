@@ -2,7 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -36,15 +35,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   programs = {
-    dankMaterialShell.greeter = {
-      enable = true;
-      compositor = {
-        name = "niri";
-        customConfig = config.home-manager.users.koye.xdg.configFile."niri/config.kdl".text;
-      };
-      configHome = "/home/koye";
-    };
-
     niri.enable = true;
 
     steam = {
@@ -70,6 +60,12 @@
   };
 
   services = {
+    displayManager.sddm = {
+      enable = true;
+      autoNumlock = true;
+      wayland.enable = true;
+      wayland.compositor = "kwin";
+    };
     desktopManager.plasma6 = {
       enable = true;
     };

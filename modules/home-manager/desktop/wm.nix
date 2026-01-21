@@ -37,6 +37,7 @@ in {
       kde-rounded-corners
       kdePackages.krohnkite
       klassy
+      papirus-icon-theme
     ];
     home.pointerCursor = {
       enable = true;
@@ -48,9 +49,9 @@ in {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
       };
-      "org/gnome/desktop/wm/preferences" = {
-        button-layout = "";
-      };
+      # "org/gnome/desktop/wm/preferences" = {
+      #   button-layout = "";
+      # };
     };
     xdg.userDirs = let
       home = "${config.home.homeDirectory}";

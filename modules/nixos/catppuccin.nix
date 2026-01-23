@@ -31,6 +31,7 @@ in {
         enable = true;
         accent = "dark";
       };
+      sddm.enable = false;
     };
   };
 }
